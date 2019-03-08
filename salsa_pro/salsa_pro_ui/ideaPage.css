@@ -1,0 +1,112 @@
+﻿.cover-photo {
+    background-image: url("Content/uni_gre.jpg");
+    background-size: 100%; /*If only one value is provided, the height will be set to auto*/
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30%;
+    position: center;
+}
+
+.uniDep {
+    font-family: 'Open Sans';
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    background-color: yellow;
+
+    padding-left: 30%;
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+    width: 70%;
+    height: 3%;
+    position: absolute;
+    left: 0;
+}
+
+.voteUp {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #f00;
+}
+
+.voteDown {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #f00;
+}
+
+.votes {
+    margin-right:32%;
+    display: inline-block;
+}
+
+.container{
+    display:inline;
+}
+
+.lbl {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 7%;
+    margin-right: 10%;
+    padding: 1%;
+    display:inline;
+}
+
+.lblT {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 30%;
+}
+
+.lblD {    
+    margin-left: 31%;
+    width: 30%;
+    padding-top: 0.3%;
+    float: left;
+    text-align: left;
+}
+.lblV {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.datalist {
+    display:inline-block;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 3%;
+    width: 35%;
+    height: 10%;
+
+    overflow: auto;
+    font-size: 14px;
+    text-align: left;
+}
+
+body {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    /*color: #495779;*/
+}
+
+footer {
+    background-color: #495779;
+    color: white;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    margin-top: 5%;
+    position: absolute;
+    width: 100%;
+    overflow:hidden;
+    bottom:0;
+    left:0;
+    text-align: center;
+    font-size: 20px;
+}
