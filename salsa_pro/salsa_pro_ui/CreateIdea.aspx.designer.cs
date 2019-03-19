@@ -112,6 +112,15 @@ namespace salsa_pro_ui {
         protected global::System.Web.UI.WebControls.Label lblDetails;
         
         /// <summary>
+        /// tbxDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxDescription;
+        
+        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>

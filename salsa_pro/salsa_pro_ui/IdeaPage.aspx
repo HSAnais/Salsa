@@ -1,12 +1,51 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IdeaPage.aspx.cs" Inherits="salsa_pro_ui.IdeaPage" %>
 
 <link rel="stylesheet" href="ideaPage.css">
+<script src="homepage.js"></script>
+
+<%-- menu--%>
+<div class="menu" onclick="menuClick()">
+    <div class ="menuBar"></div>
+    <div class ="menuBar"></div>
+    <div class ="menuBar"></div>
+    <br />
+<div id="links" class="links">
+    <br />
+    <a href="Homepage.aspx">Home</a>
+    <br />
+    <a href="UserProfile.aspx">Profile</a>
+    <br />
+    <a href="About.aspx">About</a>
+    <br />
+    <a href="Login.aspx">Login</a>
+    <br /><br />
+    <%-- toggle between colours--%>
+    <asp:Label runat="server">Light/Dark background</asp:Label>
+    <br />
+    <label class="switch">
+      <input type="checkbox" >
+      <span class="slider" onclick="bkgSwitch()"></span>
+    </label>
+</div></div>
 
 <%-- photo of university; author: Anais Hristea (not published online) --%>
 <div class="cover-photo"></div>
 <%-- department name --%>
 <asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
 <br /> <br /> <br />
+
+<div class="circle-plus">
+    <div class="tooltip">
+        <label class="tooltiptext">Create a   new idea</label>
+        <a href="CreateIdea.aspx">
+            <div class="circle">
+                <div class="horizontal"></div>
+                <div class="vertical"></div>
+            </div>
+        </a>  
+    </div>
+</div> 
+
 <body>
     <form id="form1" runat="server">
         <br /> <br />
@@ -29,6 +68,12 @@
         </div>
 
         <%-- text editor for new comment --%>
+        <div class="comment">
+            <asp:TextBox ID="tbxComment" TextMode="MultiLine" Columns="50" Rows="5" runat="server"></asp:TextBox>
+        </div>
+        <br /><br />
+        <%-- submit comment --%>
+            <asp:Button ID="btnComment" runat="server" Text="Add comment" CssClass="btn" OnClick="BtnCom_Click"></asp:Button>
 
         <%-- Comments --%>
          <div class="datalist">

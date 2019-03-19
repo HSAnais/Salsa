@@ -10,7 +10,7 @@
 namespace salsa_pro_ui {
     
     
-    public partial class Dashboard {
+    public partial class Browse {
         
         /// <summary>
         /// lblDepartment control.

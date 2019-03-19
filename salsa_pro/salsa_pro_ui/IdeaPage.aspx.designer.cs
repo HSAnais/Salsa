@@ -76,6 +76,24 @@ namespace salsa_pro_ui {
         protected global::System.Web.UI.WebControls.Label lblVotes;
         
         /// <summary>
+        /// tbxComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxComment;
+        
+        /// <summary>
+        /// btnComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnComment;
+        
+        /// <summary>
         /// dlComments control.
         /// </summary>
         /// <remarks>

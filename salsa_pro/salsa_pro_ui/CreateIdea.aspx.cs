@@ -17,6 +17,8 @@ namespace salsa_pro_ui
 
             //put tags in div
 
+            tbxDescription.Attributes["placeholder"] = "Write about your idea...";
+
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
@@ -27,7 +29,7 @@ namespace salsa_pro_ui
             /*Session["iTitle"] = txtTitle.Text;
             Session["iAuthor"] = 
             Session["iDate"] = DateTime.Now;
-            Session["iDetails"] = ;
+            Session["iDetails"] = tbxDescription.Text;
             */
 
             //push to database the new idea

@@ -1,10 +1,35 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateIdea.aspx.cs" Inherits="salsa_pro_ui.CreateIdea" %>
 
 <link rel="stylesheet" href="createIdea.css">
+<script src="homepage.js"></script>
+
+<%-- menu--%>
+<div class="menu" onclick="menuClick()">
+    <div class ="menuBar"></div>
+    <div class ="menuBar"></div>
+    <div class ="menuBar"></div>
+    <br />
+<div id="links" class="links">
+    <br />
+    <a href="Homepage.aspx">Home</a>
+    <br />
+    <a href="UserProfile.aspx">Profile</a>
+    <br />
+    <a href="About.aspx">About</a>
+    <br />
+    <a href="Login.aspx">Login</a>
+    <br /><br />
+    <%-- toggle between colours--%>
+    <asp:Label runat="server">Light/Dark background</asp:Label>
+    <br />
+    <label class="switch">
+      <input type="checkbox" >
+      <span class="slider" onclick="bkgSwitch()"></span>
+    </label>
+</div></div>
 
 <%-- photo of university; author: Anais Hristea (not published online) --%>
 <div class="cover-photo"></div>
-
 <%-- department name --%>
 <asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
 <br /> <br /> <br />
@@ -40,7 +65,12 @@
 
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblDetails" runat="server" Text="Description: "></asp:Label></asp:TableCell>
-                <asp:TableCell><%-- text editor for description --%></asp:TableCell>
+                <asp:TableCell>
+                    <%-- text editor for description --%>
+                    <div class="description">
+                        <asp:TextBox ID="tbxDescription" TextMode="MultiLine" Columns="50" Rows="5" runat="server"></asp:TextBox>
+                    </div>
+                </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
         <br /><br />

@@ -30,6 +30,8 @@ namespace salsa_pro_ui
             /*dlComments.DataSource = comments;
              *dlComments.DataBind();
              */
+
+            tbxComment.Attributes["placeholder"] = "Write a comment...";
         }
 
         protected void voteUp_Click(object sender, EventArgs e)
@@ -67,5 +69,23 @@ namespace salsa_pro_ui
                        e.Item.Controls[1], string.Empty));
             }
         }//DL_ItemDataBound
+
+        protected void BtnCom_Click(object sender, EventArgs e)
+        {
+            //input validation
+
+            //put in session the details of comment
+            /*
+            Session["cDate"] = Date.Now();
+            Session["cAuthor"] = Session["uName"];
+            Session["iComment"] = tbxComment.Text;
+            */
+
+            //push to database the new comment
+
+            //redirect to the idea page
+            Response.Redirect("IdeaPage.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
+        }
     }
 }

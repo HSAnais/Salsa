@@ -45,31 +45,31 @@ namespace salsa_pro_ui
             
         }//Page_Load
 
-        protected async void BtnSearch_Click(object sender, EventArgs e)
-        {
-            //search string
-            string inputSearch = Convert.ToString(txtSearch.Text);
+        //protected async void BtnSearch_Click(object sender, EventArgs e)
+        //{
+        //    //search string
+        //    string inputSearch = Convert.ToString(txtSearch.Text);
 
-            //get selected tags
-            int j = 0;
-            for (int i = 0; i < listTags.Items.Count; i++)
-                if (listTags.Items[i].Selected)
-                    selectedTags[j++] = listTags.Items[i].Text;
+        //    //get selected tags
+        //    int j = 0;
+        //    for (int i = 0; i < listTags.Items.Count; i++)
+        //        if (listTags.Items[i].Selected)
+        //            selectedTags[j++] = listTags.Items[i].Text;
 
-            //push to database to retrieve matches for inputSearch and selectedTags[]
+        //    //push to database to retrieve matches for inputSearch and selectedTags[]
 
-            //put in session results
+        //    //put in session results
 
-            //redirect to results page
-            Response.Redirect("SearchResults.aspx", false);
-            Context.ApplicationInstance.CompleteRequest();
+        //    //redirect to results page
+        //    Response.Redirect("SearchResults.aspx", false);
+        //    Context.ApplicationInstance.CompleteRequest();
 
-        }//BtnSearch_Click
+        //}//BtnSearch_Click
 
-        protected void SelectTag_Click(object sender, EventArgs e)
-        {
-            //do nothing; the search button includes instructions for selected tags
-        }
+        //protected void SelectTag_Click(object sender, EventArgs e)
+        //{
+        //    //do nothing; the search button includes instructions for selected tags
+        //}
 
         protected void DL_ItemDataBound(object sender, DataListItemEventArgs e)
         {

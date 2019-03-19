@@ -80,6 +80,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="about.css" />
+    <Content Include="browse.css" />
     <Content Include="Content\uni_gre.jpg" />
     <Content Include="CreateIdea.aspx" />
     <Content Include="createIdea.css" />
@@ -88,15 +91,24 @@
     <Content Include="Global.asax" />
     <Content Include="Homepage.aspx" />
     <Content Include="homepage.css" />
+    <Content Include="homepage.js" />
     <Content Include="IdeaPage.aspx" />
     <Content Include="ideaPage.css" />
     <Content Include="Login.aspx" />
-    <Content Include="SearchResults.aspx" />
+    <Content Include="Browse.aspx" />
+    <Content Include="login.css" />
     <Content Include="UserProfile.aspx" />
     <Content Include="userProfile.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="CreateIdea.aspx.cs">
       <DependentUpon>CreateIdea.aspx</DependentUpon>
@@ -137,12 +149,12 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchResults.aspx.cs">
-      <DependentUpon>SearchResults.aspx</DependentUpon>
+    <Compile Include="Browse.aspx.cs">
+      <DependentUpon>Browse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SearchResults.aspx.designer.cs">
-      <DependentUpon>SearchResults.aspx</DependentUpon>
+    <Compile Include="Browse.aspx.designer.cs">
+      <DependentUpon>Browse.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>

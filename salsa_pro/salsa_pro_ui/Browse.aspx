@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="salsa_pro_ui.Dashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="salsa_pro_ui.Browse" %>
 
-<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="browse.css">
 <script src="homepage.js"></script>
 
 <%-- menu--%>
