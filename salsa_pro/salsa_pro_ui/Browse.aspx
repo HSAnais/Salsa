@@ -46,8 +46,35 @@
 </div> 
 
 <body>
-<form id="form1" runat="server">
-        <div>
+<form id="form1" runat="server"> 
+    <asp:DropDownList ID="listTags" runat="server" CssClass="dropdown" AutoPostBack="True" OnSelectedIndexChanged="SelectedTag"></asp:DropDownList>
+    <asp:Button ID="btnSort" runat="server" CssClass="btn" Text="Sort" OnClick="BtnSort_Click"></asp:Button>
+    <br /><br />
+    
+    <div class="datalist">
+        <asp:Label ID="lblTag" CssClass="lbl" runat="server" Text="#tagtagtag"></asp:Label>
+        <br />
+        <asp:DataList ID="dlTagResults"  runat="server"
+                RepeatColumns="0" 
+                CellSpacing="20" 
+                RepeatDirection="Horizontal"
+                OnItemDataBound = "DL_ItemDataBound"
+                OnItemCommand="DL_ItemCommand">
+
+                <itemtemplate>
+                    <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
+                        <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
+                        <br />
+                        <b>Proposed by: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Author") %>'></asp:Literal>
+                        <br />
+                        <b>Submitted on: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Date") %>'></asp:Literal>
+                        <br />
+                        <b>Votes: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
+                        <br />
+                        <asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Details") %>'></asp:Literal>
+                    </asp:LinkButton>
+                </itemtemplate>
+            </asp:DataList>
         </div>
     </form>
 </body>

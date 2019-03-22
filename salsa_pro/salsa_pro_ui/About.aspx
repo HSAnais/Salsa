@@ -30,7 +30,19 @@
 
 <body>
 <form id="form1" runat="server">
-        <div>
+    <div class="credits">
+    <p><h3>This project is developed by</h3></p>
+    <p><h4>the <a href="https://github.com/HSAnais/Salsa">Salsa</a> team</h4></p>
+    <br />
+    <br />
+    <div>
+        <p>Agata K. Gajos</p>
+        <p>Lavinia N. Girihagama H Mudiyanselage</p>
+        <p>Sonia A. Goodluck</p>
+        <p>Stefania A. Hristea</p>
+        <p>Sadia Tasnim</p>
+        <p>Annapurnima Vimalkumar</p>
+    </div>
         </div>
     </form>
 </body>

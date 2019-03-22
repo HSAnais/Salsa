@@ -9,7 +9,7 @@
 }
 
 .menu {
-    margin-top: 2%;
+    top: 3%;
     margin-left: 3%;
     position: absolute;
 }
@@ -179,13 +179,26 @@ input:checked + .slider:before {
 
 .lbl {
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     padding: 2%;
     font-weight: bold;
     background-color: #495779;
-    padding-left:30%;
-    padding-right:30%;
+    padding-left:29%;
+    padding-right:29%;
     color:white;
+    width:100%;
+}
+
+.lbli {
+    font-size: 20px;
+    text-align: center;
+    padding: 2%;
+    font-weight: bold;
+    background-color: #495779;
+    padding-left: 36%;
+    padding-right: 36%;
+    color: white;
+    width: 100%;
 }
 
 .container{

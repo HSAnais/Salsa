@@ -49,7 +49,24 @@
 <body>
     <form id="form1" runat="server">
         <br /> <br />
-        <asp:Label ID="lblAuthor" CssClass="lbl" runat="server" Text="Author name"></asp:Label>
+        <asp:LinkButton ID="lblAuthor" CssClass="lbl" runat="server" OnClick="authorClick()" Text="Author name"></asp:LinkButton>
+        
+        <script>
+            function authorClick() {
+                var links = document.getElementById("options");
+                if (links.style.display === "block")
+                    links.style.display = "none";
+                else
+                    links.style.display = "block";
+            }
+        </script>
+        <div id="options">
+            <asp:RadioButtonList ID="rbAuthor" runat="server">
+                <asp:ListItem>hide/unhide</asp:ListItem>
+                <asp:ListItem>block/unblock</asp:ListItem>
+            </asp:RadioButtonList>
+        </div>
+
         <asp:Label ID="lblDate" CssClass="lbl" runat="server" Text="Date of submission"></asp:Label>
 
         <br /> <br />

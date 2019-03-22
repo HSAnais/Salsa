@@ -14,8 +14,12 @@ namespace salsa_pro_ui
             lblAuthorName.Text = Convert.ToString(Session["uName"]);
 
             //get tags from database
-
+            /*List<> Tags = await new .GetTags(); 
+             */
             //put tags in div
+            /*listTags.DataSource = Tags;
+             * listTags.DataBind();
+             */
 
             tbxDescription.Attributes["placeholder"] = "Write about your idea...";
 
@@ -37,6 +41,16 @@ namespace salsa_pro_ui
             //redirect to the idea page
             Response.Redirect("IdeaPage.aspx", false);
             Context.ApplicationInstance.CompleteRequest();
+        }
+        
+        protected void CL_ItemSelected(object sender, EventArgs e)
+        {
+            //loop through checkBoxList to select selected items
+            foreach (ListItem item in listTags.Items)
+            {
+                if (item.Selected)
+                    Session["iTags"] += item.Text + ", ";
+            }
         }
     }
 }

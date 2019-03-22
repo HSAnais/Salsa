@@ -37,7 +37,16 @@ namespace salsa_pro_ui {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAuthor;
+        protected global::System.Web.UI.WebControls.LinkButton lblAuthor;
+        
+        /// <summary>
+        /// rbAuthor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rbAuthor;
         
         /// <summary>
         /// lblDate control.

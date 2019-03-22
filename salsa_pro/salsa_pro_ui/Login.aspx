@@ -33,22 +33,24 @@
 <%-- department name --%>
 <asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
 
-<div class="circle-plus">
-    <div class="tooltip">
-        <label class="tooltiptext">Create a   new idea</label>
-        <a href="CreateIdea.aspx">
-            <div class="circle">
-                <div class="horizontal"></div>
-                <div class="vertical"></div>
-            </div>
-        </a>  
-    </div>
-</div> 
-
 <body>
 <form id="form1" runat="server">
-        <div>
-        </div>
+        <asp:Table ID="container" runat="server" CssClass="loginForm" CellPadding="10">
+            <%--Username--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="c1"><asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="txtUsername" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
+            </asp:TableRow>
+
+            <%--Password--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="c1"><asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="txtPassword" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+    <br />
+
+    <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn" OnClick="BtnLogin_Click"></asp:Button>
     </form>
 </body>
 

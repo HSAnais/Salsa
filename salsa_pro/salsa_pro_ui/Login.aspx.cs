@@ -13,5 +13,20 @@ namespace salsa_pro_ui
         {
 
         }
+
+        protected void BtnLogin_Click(object sender, EventArgs e)
+        {
+            //input validation 
+
+            //input check with database
+
+            //put in session the details of user
+            /*Session["uName"] = txtUsername.Text;
+            */
+            
+            //redirect to user profile
+            Response.Redirect("UserProfile.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
+        }
     }
 }

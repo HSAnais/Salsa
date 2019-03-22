@@ -194,6 +194,86 @@ body {
     background-color: white;
 }
 
+.welcome {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.role {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+    height: 60%;
+    width: 80%;
+    margin-left: 16%;
+    margin-top: 9%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.lblR {
+    font-size: 20px;
+    text-align: center;
+    margin-left:30%;
+    padding-bottom: 4%;
+    font-weight: bold;
+    width: 100%;
+}
+
+.datalist {
+    height: 400px;
+    width: 20%; /*RESPONSIVE*/
+    overflow: auto;
+    border-color: lightseagreen;
+    border-style: solid;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 5%;
+    text-align: left;
+}
+
+.btnLeft {
+    width: 7%;
+    height: 3%;
+    font-size: 14px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    margin-left: 10%;
+    display:inline-block;
+}
+
+.btnRight {
+    width: 7%;
+    height: 3%;
+    font-size: 14px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    margin-right: 10%;
+    display:inline-block;
+}
+
+.stats {
+    height: 400px;
+    width: 20%; /*RESPONSIVE*/
+    border-color: lightseagreen;
+    border-style: solid;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 5%;
+    text-align: left;
+}
+
 footer {
     background-color: #495779;
     color: white;

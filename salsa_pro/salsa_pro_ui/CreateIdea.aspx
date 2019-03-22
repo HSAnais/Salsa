@@ -58,9 +58,18 @@
             <%-- select tags --%>
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblTags" runat="server" Text="Tags: "></asp:Label></asp:TableCell>
-                <asp:TableCell><div class="container">
+                <asp:TableCell>
                     <%-- datalist of tags? some sort of container that selects items and displays as group--%>
-                </div></asp:TableCell>
+                    <asp:CheckBoxList ID="listTags" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow" 
+                        TextAlign="Right" CssClass="listTag" Width="95%" 
+                        OnSelectedIndexChanged="CL_ItemSelected">
+                        <asp:ListItem>Test_tag</asp:ListItem>
+                        <asp:ListItem>Test_tag1</asp:ListItem>
+                        <asp:ListItem>Test_tag2</asp:ListItem>
+                        <asp:ListItem>Test_tag3</asp:ListItem>
+                        <asp:ListItem>Test_tag4</asp:ListItem>
+                    </asp:CheckBoxList>
+                </asp:TableCell>
             </asp:TableRow>
 
             <asp:TableRow>

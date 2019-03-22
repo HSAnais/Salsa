@@ -34,6 +34,11 @@ namespace salsa_pro_ui
             tbxComment.Attributes["placeholder"] = "Write a comment...";
         }
 
+        protected void btnAuthor_Click(object sender, EventArgs e)
+        {
+            //display messagebox
+        }
+
         protected void voteUp_Click(object sender, EventArgs e)
         {
             user_Vote = Convert.ToInt32(Session["iVotes"]);

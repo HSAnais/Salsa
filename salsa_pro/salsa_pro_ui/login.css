@@ -125,73 +125,48 @@ input:checked + .slider:before {
     z-index: 1;
 }
 
-    /* Tooltip text */
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 6em;
-        bottom: 5em;
-        right: 0.1%;
-        /*left: 40%;*/
-        /*margin-right: 70px;*/ /* Use half of the width (120/2 = 60), to center the tooltip */
-        color: lightseagreen;
-        text-align: right;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 5px 0;
-        position: absolute;
-        z-index: 1;
-    }
-
-    /* Show the tooltip text when you mouse over the tooltip container */
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-    }
-
-.circle-plus {
-    height: 6em;
-    width: 6em;
-    font-size: 0.7em /*Will change icon size*/;
-    right: 10%;
-    bottom: 10%;
-    position: fixed;
-    z-index: 10;
-}
-
-    .circle-plus .circle {
-        position: relative;
-        width: 4.5em;
-        height: 4.5em;
-        border-radius: 100%;
-        border: solid .8em lightseagreen;
-    }
-
-        .circle-plus .circle .horizontal {
-            position: absolute;
-            background-color: #DFDAD7;
-            width: 2.4em;
-            height: .7em;
-            top: 1.9em;
-            left: 1.05em;
-        }
-
-        .circle-plus .circle .vertical {
-            position: absolute;
-            background-color: #DFDAD7;
-            width: .7em;
-            height: 2.4em;
-            top: 1.05em;
-            left: 1.9em;
-        }
-
-        .circle-plus .circle:hover {
-            background-color: lightseagreen;
-        }
-
 body {
     text-align: center;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
     background-color: white;
+}
+
+.txt {
+    border-radius: 3px;
+    height: 2em;
+    width: 100%;
+}
+
+.btn {
+    width: 5%;
+    height: 5%;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    margin-left: 25%;
+}
+
+.loginForm {
+    margin-left: 40%;
+    width: 20%;
+    height: 20%;
+    padding-top: 3%;
+    /*background-color:bisque;*/
+}
+
+    .loginForm tr {
+        text-align: left;
+        vertical-align: top;
+    }
+
+.c1 {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    max-height: 50%;
 }
 
 footer {
@@ -202,4 +177,8 @@ footer {
     margin-top: 5%;
     text-align: center;
     font-size: 20px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
 }

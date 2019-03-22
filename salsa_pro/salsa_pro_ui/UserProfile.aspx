@@ -9,24 +9,25 @@
     <div class ="menuBar"></div>
     <div class ="menuBar"></div>
     <br />
-<div id="links" class="links">
-    <br />
-    <a href="Homepage.aspx">Home</a>
-    <br />
-    <a href="UserProfile.aspx">Profile</a>
-    <br />
-    <a href="About.aspx">About</a>
-    <br />
-    <a href="Login.aspx">Login</a>
-    <br /><br />
-    <%-- toggle between colours--%>
-    <asp:Label runat="server">Light/Dark background</asp:Label>
-    <br />
-    <label class="switch">
-      <input type="checkbox" >
-      <span class="slider" onclick="bkgSwitch()"></span>
-    </label>
-</div></div>
+    <div id="links" class="links">
+        <br />
+        <a href="Homepage.aspx">Home</a>
+        <br />
+        <a href="UserProfile.aspx">Profile</a>
+        <br />
+        <a href="About.aspx">About</a>
+        <br />
+        <a href="Login.aspx">Login</a>
+        <br /><br />
+        <%-- toggle between colours--%>
+        <asp:Label runat="server">Light/Dark background</asp:Label>
+        <br />
+        <label class="switch">
+          <input type="checkbox" >
+          <span class="slider" onclick="bkgSwitch()"></span>
+        </label>
+    </div>
+</div>
 
 <div class="circle-plus">
     <div class="tooltip">
@@ -54,7 +55,7 @@
         </div>
 
         <div class="datalist">
-            <asp:Label CssClass="lbl" runat="server" Text="Your ideas"></asp:Label>
+            <asp:Label CssClass="lbli" runat="server" Text="Your ideas" ></asp:Label>
             <asp:DataList ID="dlIdeas"  runat="server"
                 RepeatColumns="0" 
                 CellSpacing="20" 
