@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateIdea.aspx.cs" Inherits="salsa_pro_ui.CreateIdea" %>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" href="createIdea.css">
 <script src="homepage.js"></script>
 
@@ -32,7 +33,7 @@
 <div class="cover-photo"></div>
 <%-- department name --%>
 <asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
-<br /> <br /> <br />
+<br /> <br />
 
 <body>
     <form id="form1" runat="server">

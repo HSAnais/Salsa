@@ -32,6 +32,7 @@
 <div class="cover-photo"></div>
 <%-- department name --%>
 <asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
+<br /><br /><br />
 
 <body>
 <form id="form1" runat="server">

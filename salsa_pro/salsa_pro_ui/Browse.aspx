@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="salsa_pro_ui.Browse" %>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" href="browse.css">
 <script src="homepage.js"></script>
 
@@ -32,6 +33,7 @@
 <div class="cover-photo"></div>
 <%-- department name --%>
 <asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
+<br /><br />
 
 <div class="circle-plus">
     <div class="tooltip">

@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IdeaPage.aspx.cs" Inherits="salsa_pro_ui.IdeaPage" %>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" href="ideaPage.css">
 <script src="homepage.js"></script>
 
@@ -49,7 +50,14 @@
 <body>
     <form id="form1" runat="server">
         <br /> <br />
-        <asp:LinkButton ID="lblAuthor" CssClass="lbl" runat="server" OnClick="authorClick()" Text="Author name"></asp:LinkButton>
+        <span onclick="authorClick()">
+            <div id="options">
+                <asp:RadioButtonList ID="rbAuthor" runat="server" TextAlign="Left" >
+                    <asp:ListItem>hide/unhide</asp:ListItem>
+                    <asp:ListItem>block/unblock</asp:ListItem>
+                </asp:RadioButtonList>
+            </div>
+        <asp:Label ID="lblAuthor" CssClass="lbl" runat="server" Text="Author name"></asp:Label> <%--OnClick="authorClick()"--%>
         
         <script>
             function authorClick() {
@@ -57,15 +65,10 @@
                 if (links.style.display === "block")
                     links.style.display = "none";
                 else
-                    links.style.display = "block";
+                    links.style.display = "inline-block";
             }
         </script>
-        <div id="options">
-            <asp:RadioButtonList ID="rbAuthor" runat="server">
-                <asp:ListItem>hide/unhide</asp:ListItem>
-                <asp:ListItem>block/unblock</asp:ListItem>
-            </asp:RadioButtonList>
-        </div>
+        </span>
 
         <asp:Label ID="lblDate" CssClass="lbl" runat="server" Text="Date of submission"></asp:Label>
 
@@ -88,10 +91,10 @@
         <div class="comment">
             <asp:TextBox ID="tbxComment" TextMode="MultiLine" Columns="50" Rows="5" runat="server"></asp:TextBox>
         </div>
-        <br /><br />
         <%-- submit comment --%>
             <asp:Button ID="btnComment" runat="server" Text="Add comment" CssClass="btn" OnClick="BtnCom_Click"></asp:Button>
 
+        <br /><br />
         <%-- Comments --%>
          <div class="datalist">
             <asp:DataList ID="dlComments"  runat="server"

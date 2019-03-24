@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="salsa_pro_ui.Homepage" %>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" href="homepage.css">
 <script src="homepage.js"></script>
 
@@ -70,6 +71,7 @@
                 RepeatColumns="0" 
                 CellSpacing="20" 
                 RepeatDirection="Horizontal"
+                RepeatLayout ="Flow"
                 OnItemDataBound = "DL_ItemDataBound"
                 OnItemCommand="DL_ItemCommand">
 

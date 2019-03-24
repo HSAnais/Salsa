@@ -13,15 +13,6 @@ namespace salsa_pro_ui {
     public partial class Dashboard {
         
         /// <summary>
-        /// lblDepartment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDepartment;
-        
-        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

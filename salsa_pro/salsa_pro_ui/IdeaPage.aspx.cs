@@ -10,8 +10,12 @@ namespace salsa_pro_ui
     public partial class IdeaPage : System.Web.UI.Page
     {
         int user_Vote;
+        int views;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             //put selected idea details in labels
             /*lblAuthor.Text = Convert.ToString(Session["iAuthor"]);
             lblTitle.Text = Convert.ToString(Session["iTitle"]);
@@ -22,6 +26,8 @@ namespace salsa_pro_ui
 
             //reset variable for the current session
             user_Vote = 0;
+
+            views++;
 
             //get comments for this idea
             //List<> comments = await new .GetComments(Convert.ToInt32(Session["iID"]));

@@ -28,11 +28,6 @@
     </label>
 </div></div>
 
-<%-- photo of university; author: Anais Hristea (not published online) --%>
-<div class="cover-photo"></div>
-<%-- department name --%>
-<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
-
 <div class="circle-plus">
     <div class="tooltip">
         <label class="tooltiptext">Create a   new idea</label>
@@ -47,8 +42,9 @@
 
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="lblWelcome" CssClass="welcome" runat="server" Text="Welcome, [name]!"></asp:Label><br />
-        <asp:Label ID="lblRole" CssClass="role" runat="server" Text="Quality Assurance Manager"></asp:Label>
+        <br /><br />
+        <asp:Label ID="lblWelcome" CssClass="welcome" runat="server" Text="Welcome, [name]!"></asp:Label><br /><br />
+        <asp:Label ID="lblRole" CssClass="role" runat="server" Text="Quality Assurance Manager"></asp:Label> <br />
 
         <div class="container">
             <%-- Role specific task; QAM = tags, QAC = notifications, admin = dates;--%>
