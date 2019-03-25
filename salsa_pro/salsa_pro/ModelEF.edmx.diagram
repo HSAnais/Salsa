@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="Salsa6Model.Comment" Width="1.5" PointX="6.375" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Salsa6Model.Department" Width="1.5" PointX="0.5" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Salsa6Model.Idea" Width="1.5" PointX="4.25" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Salsa6Model.IdeaVote" Width="1.5" PointX="7" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Salsa6Model.IdeaVote" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="Salsa6Model.Role" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Salsa6Model.Tag" Width="1.5" PointX="3.625" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Salsa6Model.User" Width="1.5" PointX="2.25" PointY="0.875" IsExpanded="true" />
