@@ -115,7 +115,7 @@ input:checked + .slider:before {
     right: 0;
     left: 0;
     height: 1.5em;
-    background-color: yellow;
+    background-color: #495779;
     position: absolute;
 }
 

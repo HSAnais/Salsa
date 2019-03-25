@@ -4,6 +4,12 @@
 <link rel="stylesheet" href="browse.css">
 <script src="homepage.js"></script>
 
+<%-- photo of university; author: Anais Hristea (not published online) --%>
+<div class="cover-photo"></div>
+<%-- department name --%>
+<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
+<br /><br />
+
 <%-- menu--%>
 <div class="menu" onclick="menuClick()">
     <div class ="menuBar"></div>
@@ -14,12 +20,13 @@
     <br />
     <a href="Homepage.aspx">Home</a>
     <br />
-    <a href="UserProfile.aspx">Profile</a>
+    <a href="UserProfile.aspx" id="aProfile" runat="server" ><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
     <br />
     <a href="About.aspx">About</a>
     <br />
-    <a href="Login.aspx">Login</a>
+    <a href="Login.aspx"><asp:Label id="mLogin" Text="Login" runat="server"></asp:Label></a>
     <br /><br />
+
     <%-- toggle between colours--%>
     <asp:Label runat="server">Light/Dark background</asp:Label>
     <br />
@@ -28,12 +35,6 @@
       <span class="slider" onclick="bkgSwitch()"></span>
     </label>
 </div></div>
-
-<%-- photo of university; author: Anais Hristea (not published online) --%>
-<div class="cover-photo"></div>
-<%-- department name --%>
-<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
-<br /><br />
 
 <div class="circle-plus">
     <div class="tooltip">
@@ -49,12 +50,21 @@
 
 <body>
 <form id="form1" runat="server"> 
-    <asp:DropDownList ID="listTags" runat="server" CssClass="dropdown" AutoPostBack="True" OnSelectedIndexChanged="SelectedTag"></asp:DropDownList>
+    <asp:DropDownList ID="listTags" runat="server" CssClass="dropdown" AutoPostBack="True" OnSelectedIndexChanged="SelectedTag">
+        <asp:ListItem Text=""></asp:ListItem>
+        <asp:ListItem Text="maintenance"></asp:ListItem>
+        <asp:ListItem Text="paperwork"></asp:ListItem>
+        <asp:ListItem Text="campus"></asp:ListItem>
+        <asp:ListItem Text="students"></asp:ListItem>
+        <asp:ListItem Text="course"></asp:ListItem>
+        <asp:ListItem Text="events"></asp:ListItem>
+    </asp:DropDownList>
     <asp:Button ID="btnSort" runat="server" CssClass="btn" Text="Sort" OnClick="BtnSort_Click"></asp:Button>
     <br /><br />
     
     <div class="datalist">
-        <asp:Label ID="lblTag" CssClass="lbl" runat="server" Text="#tagtagtag"></asp:Label>
+        <br />
+        <asp:Label ID="lblTag" CssClass="lbl" runat="server" Text="Latest ideas: "></asp:Label>
         <br />
         <asp:DataList ID="dlTagResults"  runat="server"
                 RepeatColumns="0" 
@@ -65,7 +75,7 @@
 
                 <itemtemplate>
                     <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
-                        <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
+                        <b><h3><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></h3></b>
                         <br />
                         <b>Proposed by: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Author") %>'></asp:Literal>
                         <br />

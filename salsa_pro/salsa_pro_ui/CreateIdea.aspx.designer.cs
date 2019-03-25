@@ -13,6 +13,24 @@ namespace salsa_pro_ui {
     public partial class CreateIdea {
         
         /// <summary>
+        /// mProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mProfile;
+        
+        /// <summary>
+        /// mLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mLogin;
+        
+        /// <summary>
         /// lblDepartment control.
         /// </summary>
         /// <remarks>
@@ -58,6 +76,15 @@ namespace salsa_pro_ui {
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
+        /// lblTValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTValid;
+        
+        /// <summary>
         /// lblAuthor control.
         /// </summary>
         /// <remarks>
@@ -94,6 +121,15 @@ namespace salsa_pro_ui {
         protected global::System.Web.UI.WebControls.ListItem lblAnonymous;
         
         /// <summary>
+        /// lblAValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAValid;
+        
+        /// <summary>
         /// lblTags control.
         /// </summary>
         /// <remarks>
@@ -128,6 +164,15 @@ namespace salsa_pro_ui {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxDescription;
+        
+        /// <summary>
+        /// lblDValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDValid;
         
         /// <summary>
         /// btnSubmit control.

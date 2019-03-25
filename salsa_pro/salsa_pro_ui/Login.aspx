@@ -13,11 +13,11 @@
     <br />
     <a href="Homepage.aspx">Home</a>
     <br />
-    <a href="UserProfile.aspx">Profile</a>
+    <a href="UserProfile.aspx" id="aProfile" runat="server" ><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
     <br />
     <a href="About.aspx">About</a>
     <br />
-    <a href="Login.aspx">Login</a>
+    <a href="Login.aspx"><asp:Label id="mLogin" Text="Login" runat="server"></asp:Label></a>
     <br /><br />
     <%-- toggle between colours--%>
     <asp:Label runat="server">Light/Dark background</asp:Label>
@@ -41,12 +41,14 @@
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label></asp:TableCell>
                 <asp:TableCell><asp:TextBox ID="txtUsername" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:Label ID="lblUValid" Text="" runat="server" CssClass="c1"></asp:Label></asp:TableCell>
             </asp:TableRow>
 
             <%--Password--%>
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label></asp:TableCell>
-                <asp:TableCell><asp:TextBox ID="txtPassword" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="txtPassword" CssClass="txt" runat="server" TextMode="Password"></asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:Label ID="lblPValid" Text="" runat="server" CssClass="c1"></asp:Label></asp:TableCell>
             </asp:TableRow>
         </asp:Table>
     <br />

@@ -10,15 +10,15 @@
     <div class ="menuBar"></div>
     <div class ="menuBar"></div>
     <br />
-<div id="links" class="links">
+    <div id="links" class="links">
     <br />
     <a href="Homepage.aspx">Home</a>
     <br />
-    <a href="UserProfile.aspx">Profile</a>
+    <a href="UserProfile.aspx"><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
     <br />
     <a href="About.aspx">About</a>
     <br />
-    <a href="Login.aspx">Login</a>
+    <a href="Login.aspx"><asp:Label id="mLogin" Text="Login" runat="server"></asp:Label></a>
     <br /><br />
     <%-- toggle between colours--%>
     <asp:Label runat="server">Light/Dark background</asp:Label>
@@ -43,6 +43,7 @@
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblTitle" runat="server" Text="Title: "></asp:Label></asp:TableCell>
                 <asp:TableCell><asp:TextBox ID="txtTitle" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:Label ID="lblTValid" Text="" runat="server" CssClass="c1"></asp:Label></asp:TableCell>
             </asp:TableRow>
 
             <%-- select type of author --%>
@@ -54,6 +55,7 @@
                         <asp:ListItem ID="lblAnonymous" runat="server" Text="Anonymous"></asp:ListItem>
                     </asp:RadioButtonList>
                 </asp:TableCell>
+                 <asp:TableCell><asp:Label ID="lblAValid" Text="" runat="server" CssClass="c1"></asp:Label></asp:TableCell>
             </asp:TableRow>
 
             <%-- select tags --%>
@@ -81,6 +83,7 @@
                         <asp:TextBox ID="tbxDescription" TextMode="MultiLine" Columns="50" Rows="5" runat="server"></asp:TextBox>
                     </div>
                 </asp:TableCell>
+                 <asp:TableCell><asp:Label ID="lblDValid" Text="" runat="server" CssClass="c1"></asp:Label></asp:TableCell>
             </asp:TableRow>
         </asp:Table>
         <br /><br />

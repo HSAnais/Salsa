@@ -9,8 +9,8 @@
 }
 
 .menu {
-    margin-top: 2%;
-    margin-left: 3%;
+    top: 3%;
+    left: 2%;
     position: absolute;
 }
 
@@ -113,13 +113,14 @@ input:checked + .slider:before {
     font-weight: bold;
     text-align: left;
     /*width:100%;*/
-    padding-left:25%;
+    padding-left: 25%;
     padding-top: 0.3em;
     right: 0;
     left: 0;
     position: absolute;
     height: 1.5em;
-    background-color: yellow;
+    background-color: #495779;
+    color: white;
 }
 
 /* Tooltip container */
@@ -130,7 +131,7 @@ input:checked + .slider:before {
 
     /* Tooltip text */
     .tooltip .tooltiptext {
-        visibility: hidden;
+        /*visibility: hidden;*/
         width: 6em;
         bottom: 5em;
         right: 0.1%;
@@ -241,11 +242,13 @@ body {
 
 .selectItem {
     text-align: left;
-    color: #73ab84;
+    text-decoration: none;
+    color: black;
 }
 
     .selectItem:hover {
         background-color: #087f8c;
+        color: white;
     }
 
 footer {
@@ -258,7 +261,7 @@ footer {
     font-size: 20px;
 }
 
-@media only screen and (max-width: 767px){
+@media (max-width: 767px){
     .menuBar{
         width: 25px;
         margin: 3px 0;
