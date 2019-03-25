@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Salsa6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Comment_Id" />
+          </Key>
+          <Property Name="Comment_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="CommentDetail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="IsVisible" Type="bit" />
+          <Property Name="IsAnonymous" Type="bit" />
+          <Property Name="Idea_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Department_Id" />
+          </Key>
+          <Property Name="Department_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Department_Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Idea">
+          <Key>
+            <PropertyRef Name="Idea_Id" />
+          </Key>
+          <Property Name="Idea_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tag_Id" Type="int" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="TitleOfIdea" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdeaDetail" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdeaDate" Type="date" />
+          <Property Name="IsVisible" Type="bit" />
+          <Property Name="IsAnonymous" Type="bit" />
+        </EntityType>
+        <EntityType Name="IdeaVote">
+          <Key>
+            <PropertyRef Name="IdeaVote_Id" />
+          </Key>
+          <Property Name="IdeaVote_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsLike" Type="bit" />
+          <Property Name="Idea_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Role_Id" />
+          </Key>
+          <Property Name="Role_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Role_Permission" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Tag_Id" />
+          </Key>
+          <Property Name="Tag_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Department_Id" Type="int" />
+          <Property Name="Role_Id" Type="int" />
+          <Property Name="IsVisible" Type="bit" />
+          <Property Name="IsSuspended" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Department_ToTable">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Department_Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Idea_Id_ToTable">
+          <End Role="Idea" Type="Self.Idea" Multiplicity="0..1" />
+          <End Role="IdeaVote" Type="Self.IdeaVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Idea">
+              <PropertyRef Name="Idea_Id" />
+            </Principal>
+            <Dependent Role="IdeaVote">
+              <PropertyRef Name="Idea_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Idea_ToTable">
+          <End Role="Idea" Type="Self.Idea" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Idea">
+              <PropertyRef Name="Idea_Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Idea_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Role_ToTable">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Role_Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Role_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tag_ToTable">
+          <End Role="Tag" Type="Self.Tag" Multiplicity="0..1" />
+          <End Role="Idea" Type="Self.Idea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Tag_Id" />
+            </Principal>
+            <Dependent Role="Idea">
+              <PropertyRef Name="Tag_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserId_ToTable">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Idea" Type="Self.Idea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_Id" />
+            </Principal>
+            <Dependent Role="Idea">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="getComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getIdeas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getStaff" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getVoteThumbsDown" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getVoteThumbsUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="Salsa6ModelStoreContainer">
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Idea" EntityType="Self.Idea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IdeaVote" EntityType="Self.IdeaVote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Department_ToTable" Association="Self.FK_Department_ToTable">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Idea_Id_ToTable" Association="Self.FK_Idea_Id_ToTable">
+            <End Role="Idea" EntitySet="Idea" />
+            <End Role="IdeaVote" EntitySet="IdeaVote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Idea_ToTable" Association="Self.FK_Idea_ToTable">
+            <End Role="Idea" EntitySet="Idea" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Role_ToTable" Association="Self.FK_Role_ToTable">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tag_ToTable" Association="Self.FK_Tag_ToTable">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="Idea" EntitySet="Idea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserId_ToTable" Association="Self.FK_UserId_ToTable">
+            <End Role="User" EntitySet="User" />
+            <End Role="Idea" EntitySet="Idea" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Salsa6Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Comment_Id" />
+          </Key>
+          <Property Name="Comment_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="CommentDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="IsVisible" Type="Boolean" />
+          <Property Name="IsAnonymous" Type="Boolean" />
+          <Property Name="Idea_Id" Type="Int32" />
+          <NavigationProperty Name="Idea" Relationship="Self.FK_Idea_ToTable" FromRole="Comment" ToRole="Idea" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Department_Id" />
+          </Key>
+          <Property Name="Department_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Department_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Department_ToTable" FromRole="Department" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Idea">
+          <Key>
+            <PropertyRef Name="Idea_Id" />
+          </Key>
+          <Property Name="Idea_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tag_Id" Type="Int32" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="TitleOfIdea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdeaDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdeaDate" Type="DateTime" Precision="0" />
+          <Property Name="IsVisible" Type="Boolean" />
+          <Property Name="IsAnonymous" Type="Boolean" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Idea_ToTable" FromRole="Idea" ToRole="Comment" />
+          <NavigationProperty Name="IdeaVotes" Relationship="Self.FK_Idea_Id_ToTable" FromRole="Idea" ToRole="IdeaVote" />
+          <NavigationProperty Name="Tag" Relationship="Self.FK_Tag_ToTable" FromRole="Idea" ToRole="Tag" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserId_ToTable" FromRole="Idea" ToRole="User" />
+        </EntityType>
+        <EntityType Name="IdeaVote">
+          <Key>
+            <PropertyRef Name="IdeaVote_Id" />
+          </Key>
+          <Property Name="IdeaVote_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsLike" Type="Boolean" />
+          <Property Name="Idea_Id" Type="Int32" />
+          <NavigationProperty Name="Idea" Relationship="Self.FK_Idea_Id_ToTable" FromRole="IdeaVote" ToRole="Idea" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Role_Id" />
+          </Key>
+          <Property Name="Role_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role_Permission" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Role_ToTable" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Tag_Id" />
+          </Key>
+          <Property Name="Tag_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ideas" Relationship="Self.FK_Tag_ToTable" FromRole="Tag" ToRole="Idea" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Department_Id" Type="Int32" />
+          <Property Name="Role_Id" Type="Int32" />
+          <Property Name="IsVisible" Type="Boolean" />
+          <Property Name="IsSuspended" Type="Boolean" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Department_ToTable" FromRole="User" ToRole="Department" />
+          <NavigationProperty Name="Ideas" Relationship="Self.FK_UserId_ToTable" FromRole="User" ToRole="Idea" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Role_ToTable" FromRole="User" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Idea_ToTable">
+          <End Role="Idea" Type="Self.Idea" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Idea">
+              <PropertyRef Name="Idea_Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Idea_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Department_ToTable">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Department_Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Idea_Id_ToTable">
+          <End Role="Idea" Type="Self.Idea" Multiplicity="0..1" />
+          <End Role="IdeaVote" Type="Self.IdeaVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Idea">
+              <PropertyRef Name="Idea_Id" />
+            </Principal>
+            <Dependent Role="IdeaVote">
+              <PropertyRef Name="Idea_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tag_ToTable">
+          <End Role="Tag" Type="Self.Tag" Multiplicity="0..1" />
+          <End Role="Idea" Type="Self.Idea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Tag_Id" />
+            </Principal>
+            <Dependent Role="Idea">
+              <PropertyRef Name="Tag_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserId_ToTable">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Idea" Type="Self.Idea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_Id" />
+            </Principal>
+            <Dependent Role="Idea">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Role_ToTable">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Role_Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Role_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Salsa6Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Ideas" EntityType="Self.Idea" />
+          <EntitySet Name="IdeaVotes" EntityType="Self.IdeaVote" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Tags" EntityType="Self.Tag" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Idea_ToTable" Association="Self.FK_Idea_ToTable">
+            <End Role="Idea" EntitySet="Ideas" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Department_ToTable" Association="Self.FK_Department_ToTable">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Idea_Id_ToTable" Association="Self.FK_Idea_Id_ToTable">
+            <End Role="Idea" EntitySet="Ideas" />
+            <End Role="IdeaVote" EntitySet="IdeaVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tag_ToTable" Association="Self.FK_Tag_ToTable">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="Idea" EntitySet="Ideas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserId_ToTable" Association="Self.FK_UserId_ToTable">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Idea" EntitySet="Ideas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Role_ToTable" Association="Self.FK_Role_ToTable">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <FunctionImport Name="getComment" ReturnType="Collection(Salsa6Model.getComment_Result)" />
+          <FunctionImport Name="getIdeas" ReturnType="Collection(Salsa6Model.getIdeas_Result)" />
+          <FunctionImport Name="getStaff" ReturnType="Collection(Salsa6Model.getStaff_Result)" />
+          <FunctionImport Name="getVoteThumbsDown" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="getVoteThumbsUp" ReturnType="Collection(Int32)" />
+        </EntityContainer>
+        <ComplexType Name="getComment_Result">
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TitleOfIdea" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getIdeas_Result">
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TitleOfIdea" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getStaff_Result">
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Department_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Salsa6ModelStoreContainer" CdmEntityContainer="Salsa6Entities">
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="Salsa6Model.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="Comment_Id" ColumnName="Comment_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="CommentDetail" ColumnName="CommentDetail" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="Idea_Id" ColumnName="Idea_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="Salsa6Model.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+                <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ideas">
+            <EntityTypeMapping TypeName="Salsa6Model.Idea">
+              <MappingFragment StoreEntitySet="Idea">
+                <ScalarProperty Name="Idea_Id" ColumnName="Idea_Id" />
+                <ScalarProperty Name="Tag_Id" ColumnName="Tag_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="TitleOfIdea" ColumnName="TitleOfIdea" />
+                <ScalarProperty Name="IdeaDetail" ColumnName="IdeaDetail" />
+                <ScalarProperty Name="IdeaDate" ColumnName="IdeaDate" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdeaVotes">
+            <EntityTypeMapping TypeName="Salsa6Model.IdeaVote">
+              <MappingFragment StoreEntitySet="IdeaVote">
+                <ScalarProperty Name="IdeaVote_Id" ColumnName="IdeaVote_Id" />
+                <ScalarProperty Name="IsLike" ColumnName="IsLike" />
+                <ScalarProperty Name="Idea_Id" ColumnName="Idea_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Salsa6Model.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+                <ScalarProperty Name="Role_Permission" ColumnName="Role_Permission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="Salsa6Model.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="Tag_Id" ColumnName="Tag_Id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Salsa6Model.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="IsSuspended" ColumnName="IsSuspended" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getComment" FunctionName="Salsa6Model.Store.getComment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Salsa6Model.getComment_Result">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="TitleOfIdea" ColumnName="TitleOfIdea" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getIdeas" FunctionName="Salsa6Model.Store.getIdeas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Salsa6Model.getIdeas_Result">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="TitleOfIdea" ColumnName="TitleOfIdea" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getStaff" FunctionName="Salsa6Model.Store.getStaff">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Salsa6Model.getStaff_Result">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getVoteThumbsDown" FunctionName="Salsa6Model.Store.getVoteThumbsDown" />
+          <FunctionImportMapping FunctionImportName="getVoteThumbsUp" FunctionName="Salsa6Model.Store.getVoteThumbsUp" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4eaa8c4069fe4365b992e2418f39871f" Name="Diagram1">
+        <EntityTypeShape EntityType="Salsa6Model.Comment" Width="1.5" PointX="6.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Salsa6Model.Department" Width="1.5" PointX="0.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Salsa6Model.Idea" Width="1.5" PointX="4.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Salsa6Model.IdeaVote" Width="1.5" PointX="7" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Salsa6Model.Role" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Salsa6Model.Tag" Width="1.5" PointX="3.625" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Salsa6Model.User" Width="1.5" PointX="2.25" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="Salsa6Model.FK_Idea_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Salsa6Model.FK_Department_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Salsa6Model.FK_Idea_Id_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Salsa6Model.FK_Tag_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Salsa6Model.FK_UserId_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Salsa6Model.FK_Role_ToTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
