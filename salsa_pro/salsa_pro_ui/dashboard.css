@@ -196,16 +196,18 @@ body {
 .lblR {
     font-size: 20px;
     text-align: center;
-    margin-left:30%;
-    padding-bottom: 4%;
+    margin-left: 30%;
+    padding: 3%;
     font-weight: bold;
     width: 100%;
+    background-color: #495779;
+    color: white;
 }
 
 .datalist {
-    height: 400px;
-    width: 20%; /*RESPONSIVE*/
-    overflow: auto;
+    max-height: 500px;
+    min-width: 20%;
+    overflow: scroll;
     border-color: lightseagreen;
     border-style: solid;
     font-size: 14px;
@@ -215,8 +217,8 @@ body {
 }
 
 .btnLeft {
-    width: 7%;
-    height: 3%;
+    width: 3em;
+    height: 2em;
     font-size: 14px;
     border-radius: 10px;
     border-style: none;
@@ -224,19 +226,18 @@ body {
     color: white;
     font-weight: bold;
     margin-left: 10%;
-    display:inline-block;
+    display: inline-block;
 }
 
 .btnRight {
-    width: 7%;
-    height: 3%;
+    width: 4em;
+    height: 2em;
     font-size: 14px;
     border-radius: 10px;
     border-style: none;
     background-color: gray;
     color: white;
     font-weight: bold;
-    margin-right: 10%;
     display:inline-block;
 }
 

@@ -4,6 +4,12 @@
 <link rel="stylesheet" href="ideaPage.css">
 <script src="homepage.js"></script>
 
+<%-- photo of university; author: Anais Hristea (not published online) --%>
+<div class="cover-photo" title="Photo of university campus"></div>
+<%-- department name --%>
+<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
+<br /> <br /> <br />
+
 <%-- menu--%>
 <div class="menu" onclick="menuClick()">
     <div class ="menuBar"></div>
@@ -14,11 +20,13 @@
     <br />
     <a href="Homepage.aspx">Home</a>
     <br />
-    <a href="UserProfile.aspx">Profile</a>
+    <a href="Browse.aspx">Browse ideas</a>
+    <br />
+    <a href="UserProfile.aspx" id="aProfile" runat="server"><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
     <br />
     <a href="About.aspx">About</a>
     <br />
-    <a href="Login.aspx">Login</a>
+    <a href="Login.aspx"><asp:Label id="mLogin" Text="Login" runat="server"></asp:Label></a>
     <br /><br />
     <%-- toggle between colours--%>
     <asp:Label runat="server">Light/Dark background</asp:Label>
@@ -28,12 +36,6 @@
       <span class="slider" onclick="bkgSwitch()"></span>
     </label>
 </div></div>
-
-<%-- photo of university; author: Anais Hristea (not published online) --%>
-<div class="cover-photo"></div>
-<%-- department name --%>
-<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
-<br /> <br /> <br />
 
 <div class="circle-plus">
     <div class="tooltip">
@@ -105,7 +107,7 @@
 
                 <itemtemplate>
                     <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Author") %>'></asp:Literal></b>
-                    <b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Date") %>'></asp:Literal></b>
+                    <b><asp:Label ID="Literal2" CssClass="lblCD" runat="server" Text='<%#Eval("Date") %>'></asp:Label></b>
                     <br />
                     <asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Details") %>'></asp:Literal>
                     <br /><br /><br />               

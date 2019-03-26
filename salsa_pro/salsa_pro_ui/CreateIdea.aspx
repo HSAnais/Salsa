@@ -4,6 +4,12 @@
 <link rel="stylesheet" href="createIdea.css">
 <script src="homepage.js"></script>
 
+<%-- photo of university; author: Anais Hristea (not published online) --%>
+<div class="cover-photo" title="Photo of university campus"></div>
+<%-- department name --%>
+<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
+<br /> <br />
+
 <%-- menu--%>
 <div class="menu" onclick="menuClick()">
     <div class ="menuBar"></div>
@@ -14,7 +20,9 @@
     <br />
     <a href="Homepage.aspx">Home</a>
     <br />
-    <a href="UserProfile.aspx"><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
+    <a href="Browse.aspx">Browse ideas</a>
+    <br />
+    <a href="UserProfile.aspx" id="aProfile" runat="server" ><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
     <br />
     <a href="About.aspx">About</a>
     <br />
@@ -28,12 +36,6 @@
       <span class="slider" onclick="bkgSwitch()"></span>
     </label>
 </div></div>
-
-<%-- photo of university; author: Anais Hristea (not published online) --%>
-<div class="cover-photo"></div>
-<%-- department name --%>
-<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
-<br /> <br />
 
 <body>
     <form id="form1" runat="server">
@@ -66,11 +68,12 @@
                     <asp:CheckBoxList ID="listTags" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow" 
                         TextAlign="Right" CssClass="listTag" Width="95%" 
                         OnSelectedIndexChanged="CL_ItemSelected">
-                        <asp:ListItem>Test_tag</asp:ListItem>
-                        <asp:ListItem>Test_tag1</asp:ListItem>
-                        <asp:ListItem>Test_tag2</asp:ListItem>
-                        <asp:ListItem>Test_tag3</asp:ListItem>
-                        <asp:ListItem>Test_tag4</asp:ListItem>
+                        <asp:ListItem>maintenance</asp:ListItem>
+                        <asp:ListItem>paperwork</asp:ListItem>
+                        <asp:ListItem>campus</asp:ListItem>
+                        <asp:ListItem>students</asp:ListItem>
+                        <asp:ListItem>course</asp:ListItem>
+                        <asp:ListItem>events</asp:ListItem>
                     </asp:CheckBoxList>
                 </asp:TableCell>
             </asp:TableRow>
@@ -84,6 +87,22 @@
                     </div>
                 </asp:TableCell>
                  <asp:TableCell><asp:Label ID="lblDValid" Text="" runat="server" CssClass="c1"></asp:Label></asp:TableCell>
+            </asp:TableRow>
+
+            <asp:TableRow>
+                <asp:TableCell CssClass="c1"><asp:Label ID="Label1" runat="server" Text="Upload document: "></asp:Label></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="tbxDocument" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:Button ID="btnDocument" runat="server" Text="Upload" CssClass="btnDoc" OnClick="BtnDoc_Click"></asp:Button></asp:TableCell>
+            </asp:TableRow>
+
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:CheckBoxList ID="terms" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow" 
+                        TextAlign="Right" CssClass="listTag" Width="95%" 
+                        OnSelectedIndexChanged="CL_ItemSelected">
+                        <asp:ListItem>I agree with the <a href="About.aspx">Terms & conditions</a></asp:ListItem>
+                    </asp:CheckBoxList>
+                </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
         <br /><br />

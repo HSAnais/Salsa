@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="salsa_pro_ui.Dashboard" %>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" href="dashboard.css">
 <script src="homepage.js"></script>
 
@@ -13,11 +14,13 @@
     <br />
     <a href="Homepage.aspx">Home</a>
     <br />
-    <a href="UserProfile.aspx">Profile</a>
+    <a href="Browse.aspx">Browse ideas</a>
+    <br />
+    <a href="Dashboard.aspx">Dashboard</a>
     <br />
     <a href="About.aspx">About</a>
     <br />
-    <a href="Login.aspx">Login</a>
+    <a href="Login.aspx"><asp:Label id="mLogin" Text="Login" runat="server"></asp:Label></a>
     <br /><br />
     <%-- toggle between colours--%>
     <asp:Label runat="server">Light/Dark background</asp:Label>
@@ -49,7 +52,7 @@
         <div class="container">
             <%-- Role specific task; QAM = tags, QAC = notifications, admin = dates;--%>
              <div class="datalist">
-                <asp:Label ID="lblR" CssClass="lblR" runat="server" Text="Notifications" ></asp:Label>
+                <asp:Label ID="lblR" CssClass="lblR" runat="server" Text="Notifications" ></asp:Label><br />
                 <asp:DataList ID="dlRole"  runat="server"
                     RepeatColumns="0" 
                     CellSpacing="20" 
@@ -58,12 +61,11 @@
                     OnItemCommand="DL_ItemCommand">
 
                     <itemtemplate>
-                        <b><asp:Literal ID="lblTitle" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
+                        <b><asp:Label ID="lblTitle" runat="server" Text='<%#Eval("Title")%>'></asp:Label></b>
                         <br />
-
                         <%-- hide/unhide the following, depending on role --%>
                         <%-- QAC --%>
-                        <asp:Literal ID="lblDescription" runat="server" Text='<%#Eval("Description") %>' Visible="false"></asp:Literal>
+                        <asp:Label ID="lblDescription" runat="server" Text='<%#Eval("Details") %>' Visible="false"></asp:Label>
                         <%-- QAM/admin --%>
                         <asp:Button ID="btnEditSave" runat="server" Text="Edit" CssClass="btnLeft" OnClick="BtnEditSave_Click"></asp:Button>
                         <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btnRight" OnClick="BtnDelete_Click"></asp:Button>

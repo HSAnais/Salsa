@@ -9,8 +9,8 @@
 }
 
 .menu {
-    margin-top: 2%;
-    margin-left: 3%;
+    top: 3%;
+    left: 2%;
     position: absolute;
 }
 
@@ -110,8 +110,8 @@ input:checked + .slider:before {
     font-size: 26px;
     font-weight: bold;
     text-align: left;
-    background-color: yellow;
-
+    background-color: #495779;
+    color: white;
     padding-left: 25%;
     padding-top: 0.3em;
     right: 0;
@@ -206,12 +206,12 @@ input:checked + .slider:before {
 }
 
 .votes {
-    /*margin-right:30%;*/
+    margin-right:30%;
     display: inline-block;
 }
 
 .container{
-    display:inline;
+    display:inline-block;
 }
 
 #options{
@@ -275,13 +275,20 @@ input:checked + .slider:before {
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 3%;
-    max-width: 400px;
+    max-width: 600px;
     min-height: 300px;
 
     border-style:solid;
-    overflow: auto;
+    overflow: scroll;
     font-size: 14px;
     text-align: left;
+}
+
+.lblCD{
+    margin-left: 3em;
+    color:slategrey;
+    font-weight:normal;
+    font-size:14px;
 }
 
 body {

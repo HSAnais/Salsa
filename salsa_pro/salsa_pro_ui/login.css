@@ -116,6 +116,7 @@ input:checked + .slider:before {
     left: 0;
     height: 1.5em;
     background-color: #495779;
+    color: white;
     position: absolute;
 }
 
@@ -137,6 +138,10 @@ body {
     border-radius: 3px;
     height: 2em;
     width: 100%;
+}
+#lblUValid, #lblPValid {
+    font-weight: normal;
+    color: darkred;
 }
 
 .btn {

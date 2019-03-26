@@ -174,7 +174,7 @@ input:checked + .slider:before {
 .login {
     text-align: center;
     font-size: 20px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .lbl {
@@ -206,10 +206,9 @@ input:checked + .slider:before {
     height: 60%;
     width:80%;
     margin-left:16%;
-    margin-top:9%;
+    margin-top:5%;
     display:flex;
     align-items:flex-start;
-    overflow:visible;
 }
 
 .info{
@@ -219,10 +218,11 @@ input:checked + .slider:before {
 
 .datalist {
     min-height: 400px;
+    max-height: 600px;
     max-width: 400px;
-    /*overflow: auto;*/
-    border-color: lightseagreen;
-    border-style: solid;
+    overflow: scroll;
+    /*border-color: lightseagreen;
+    border-style: solid;*/
     font-size: 14px;
     display:inline-block;
     margin-left:10%;
@@ -230,12 +230,14 @@ input:checked + .slider:before {
 
 .selectItem {
     text-align: center;
-    color: #73ab84;
+    color: black;
+    text-decoration:none;
     display:inline;
 }
 
     .selectItem:hover {
         background-color: #087f8c;
+        color: white;
     }
 
 body {
@@ -254,8 +256,8 @@ footer {
     margin-top: 5%;
     text-align: center;
     font-size: 20px;
-    position:absolute;
     bottom: 0;
     left: 0;
     right: 0;
+    position:absolute;
 }

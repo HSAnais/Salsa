@@ -13,6 +13,8 @@
     <br />
     <a href="Homepage.aspx">Home</a>
     <br />
+    <a href="Browse.aspx">Browse ideas</a>
+    <br />
     <a href="UserProfile.aspx" id="aProfile" runat="server" ><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
     <br />
     <a href="About.aspx">About</a>
@@ -29,7 +31,7 @@
 </div></div>
 
 <%-- photo of university; author: Anais Hristea (not published online) --%>
-<div class="cover-photo"></div>
+<div class="cover-photo"title="Photo of university campus"></div>
 <%-- department name --%>
 <asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
 <br /><br /><br />

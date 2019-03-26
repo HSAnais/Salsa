@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserProfile.aspx.cs" Inherits="salsa_pro_ui.UserProfile" %>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" href="userProfile.css">
 <script src="homepage.js"></script>
 
@@ -13,11 +14,13 @@
         <br />
         <a href="Homepage.aspx">Home</a>
         <br />
-        <a href="UserProfile.aspx">Profile</a>
+        <a href="Browse.aspx">Browse ideas</a>
+        <br />
+        <a href="UserProfile.aspx" id="aProfile" runat="server"><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
         <br />
         <a href="About.aspx">About</a>
         <br />
-        <a href="Login.aspx">Login</a>
+        <a href="Login.aspx"><asp:Label id="mLogin" Text="Login" runat="server"></asp:Label></a>
         <br /><br />
         <%-- toggle between colours--%>
         <asp:Label runat="server">Light/Dark background</asp:Label>
@@ -48,10 +51,10 @@
 
     <div class="container">
         <div class="info">
-            <asp:Label runat="server" Text="Email:"></asp:Label><br />
+            <b><asp:Label runat="server" Text="Email:"></asp:Label></b><br />
             <asp:Label ID="lblEmail" runat="server" Text="xxxxxxx@greenwich.ac.uk"></asp:Label><br /><br />
-            <asp:Label runat="server" Text="Department:"></asp:Label><br />
-            <asp:Label ID="lblDep" runat="server" Text="Coomputing and Maths"></asp:Label><br />
+            <b><asp:Label runat="server" Text="Department:"></asp:Label></b><br />
+            <asp:Label ID="lblDep" runat="server" Text="Computing and Maths"></asp:Label><br />
         </div>
 
         <div class="datalist">
@@ -65,8 +68,9 @@
 
                 <itemtemplate>
                     <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
-                        <b><asp:Label ID="lblVotes" runat="server" Text='<%#Eval("Rating")%>'></asp:Label><br />votes</b>
+                        
                         <b><asp:Label ID="lblIdea" runat="server" Text='<%#Eval("Title") %>'></asp:Label></b><br />
+                        <asp:Label ID="lblVotes" runat="server" Text='<%#Eval("Rating")%>'></asp:Label><b> votes</b><br />
                         <asp:Label ID="lblDetails" runat="server" Text='<%#Eval("Details") %>'></asp:Label>
                     </asp:LinkButton>
                 </itemtemplate>
@@ -84,9 +88,9 @@
 
                 <itemtemplate>
                     <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
-                        <b> On <asp:Label ID="lblIdeaTitle" runat="server" Text='<%#Eval("Title")%>'></asp:Label></b><br />
+                        <b> On: <asp:Label ID="lblComAuthor" runat="server" Text='<%#Eval("Title")%>'></asp:Label></b>
+                        <asp:Label ID="lblComDate" runat="server" Text='<%#Eval("ComDate") %>'></asp:Label><br />
                         <asp:Label ID="lblComment" runat="server" Text='<%#Eval("ComDetail") %>'></asp:Label><br />
-                        <asp:Label ID="lblComDate" runat="server" Text='<%#Eval("ComDate") %>'></asp:Label>
                     </asp:LinkButton>
                 </itemtemplate>
             </asp:DataList>

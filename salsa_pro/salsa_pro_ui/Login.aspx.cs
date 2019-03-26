@@ -11,8 +11,11 @@ namespace salsa_pro_ui
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblUValid.Text = "";
-            lblPValid.Text = "";
+            if (!IsPostBack)
+            {
+                lblUValid.Text = "";
+                lblPValid.Text = "";
+            }
 
             if(Session["uName"]!=null)
             {
@@ -39,22 +42,50 @@ namespace salsa_pro_ui
         {
             //input validation 
             if (txtUsername.Text == null || txtPassword.Text == null)
+            {
                 lblUValid.Text = "Please fill all fields";
+                return; }
 
+            if(txtPassword.Text == "wrong")
+            {
+                lblPValid.Text = "Wrong password";
+                return;
+            }
             //input check with database
+
+            if(btnLogin.Text == "Logout")
+            {
+                Session["uName"] = null;
+                Response.Redirect("Homepage.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
 
             //put in session the details of user
             Session["uName"] = txtUsername.Text;
+            Session["uDepartment"] = "Department of Life Sciences";
+            Session["uRole"] = "Staff";
 
             switch (txtUsername.Text) {
                 case "qam":
+                    Session["uName"] = "Sarah Lovelace";
                     Session["uRole"] = "Quality Assurance Manager";
+                    Session["uDepartment"] = "University of Ormount";
+                    Response.Redirect("Dashboard.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
                     break;
                 case "qac":
+                    Session["uName"] = "Jonathan Pine";
                     Session["uRole"] = "Quality Assurance Coordinator";
+                    Session["uDepartment"] = "Department of Life Sciences";
+                    Response.Redirect("Dashboard.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
                     break;
                 case "admin":
+                    Session["uName"] = "Deborah Smith";
                     Session["uRole"] = "Administrator";
+                    Session["uDepartment"] = "University of Ormount";
+                    Response.Redirect("Dashboard.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
                     break;
                 default:
                     break;
