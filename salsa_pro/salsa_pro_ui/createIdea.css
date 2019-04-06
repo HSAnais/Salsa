@@ -181,7 +181,7 @@ h3{
 }
 
 .ideaForm{
-    max-width: 200px;
+    max-width: 500px;
     min-height:400px;
     margin-left: 35%;
     margin-right: 35%;
@@ -255,7 +255,4 @@ footer {
         max-width: 100px;
         margin-left: 15%;
     }
-
-    .lbl {
     }
-}

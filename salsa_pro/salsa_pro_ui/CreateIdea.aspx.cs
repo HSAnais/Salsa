@@ -37,12 +37,12 @@ namespace salsa_pro_ui
             lblAuthorName.Text = Convert.ToString(Session["uName"]);
 
             //validation
-            if (!IsPostBack)
-            {
-                lblAValid.Text = "";
-                lblDValid.Text = "";
-                lblTValid.Text = "";
-            }
+            //if (!IsPostBack)
+            //{
+            //    lblAValid.Text = "";
+            //    lblDValid.Text = "";
+            //    lblTValid.Text = "";
+            //}
 
             //get tags from database
             /*List<> Tags = await new .GetTags(); 
@@ -79,28 +79,27 @@ namespace salsa_pro_ui
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
+            bool isReady = true;
+
             //input validation
             if (txtTitle.Text == "")
             {
                 lblTValid.Text = "Please fill in the title of your idea";
-                Response.Redirect("CreateIdea.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                isReady = false;
                 return;
             }
 
             if (tbxDescription.Text == "")
             {
                 lblDValid.Text = "Please fill in details of your idea";
-                Response.Redirect("CreateIdea.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                isReady = false;
                 return;
             }
 
             if (authorType.SelectedIndex < 0)
             {
                 lblAValid.Text = "Please choose how will your username be displayed";
-                Response.Redirect("CreateIdea.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                isReady = false;
                 return;
             }
 

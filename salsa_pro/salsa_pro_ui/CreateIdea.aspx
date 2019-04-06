@@ -45,7 +45,7 @@
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblTitle" runat="server" Text="Title: "></asp:Label></asp:TableCell>
                 <asp:TableCell><asp:TextBox ID="txtTitle" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
-                <asp:TableCell><asp:Label ID="lblTValid" Text="" runat="server" CssClass="valid"></asp:Label></asp:TableCell>
+                <asp:TableCell><asp:Label ID="lblTValid" Text="" runat="server" CssClass="valid" AssociatedControlID="txtTitle"></asp:Label></asp:TableCell>
             </asp:TableRow>
 
             <%-- select type of author --%>
@@ -57,7 +57,7 @@
                         <asp:ListItem ID="lblAnonymous" runat="server" Text="Anonymous"></asp:ListItem>
                     </asp:RadioButtonList>
                 </asp:TableCell>
-                 <asp:TableCell><asp:Label ID="lblAValid" Text="" runat="server" CssClass="valid"></asp:Label></asp:TableCell>
+                 <asp:TableCell><asp:Label ID="lblAValid" Text="" runat="server" CssClass="valid" AssociatedControlID="authorType"></asp:Label></asp:TableCell>
             </asp:TableRow>
 
             <%-- select tags --%>
@@ -86,7 +86,7 @@
                         <asp:TextBox ID="tbxDescription" TextMode="MultiLine" Columns="50" Rows="5" runat="server"></asp:TextBox>
                     </div>
                 </asp:TableCell>
-                 <asp:TableCell><asp:Label ID="lblDValid" Text="" runat="server" CssClass="valid"></asp:Label></asp:TableCell>
+                 <asp:TableCell><asp:Label ID="lblDValid" Text="" runat="server" CssClass="valid" AssociatedControlID="tbxDescription"></asp:Label></asp:TableCell>
             </asp:TableRow>
 
             <asp:TableRow>
