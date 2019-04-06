@@ -58,23 +58,23 @@ namespace salsa_pro_ui
 
         protected void BtnDoc_Click(object sender, EventArgs e)
         {
-            // Configure open file dialog box
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-            dlg.FileName = "Document"; // Default file name
-            dlg.DefaultExt = ".txt"; // Default file extension
-            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+            //// Configure open file dialog box
+            //Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            //dlg.FileName = "Document"; // Default file name
+            //dlg.DefaultExt = ".txt"; // Default file extension
+            //dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
 
-            // Show open file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
+            //// Show open file dialog box
+            //Nullable<bool> result = dlg.ShowDialog();
 
-            // Process open file dialog box results
-            if (result == true)
-            {
-                // Open document
-                string filename = dlg.FileName;
+            //// Process open file dialog box results
+            //if (result == true)
+            //{
+            //    // Open document
+            //    string filename = dlg.FileName;
 
-                tbxDocument.Attributes["placeholder"] = dlg.FileName;
-            }
+            //    tbxDocument.Attributes["placeholder"] = dlg.FileName;
+            //}
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
@@ -104,13 +104,13 @@ namespace salsa_pro_ui
                 return;
             }
 
-            if(terms.SelectedIndex < 0)
-            {
-                lblDValid.Text = "You have to agree with the Terms and conditions before submitting an idea";
-                Response.Redirect("CreateIdea.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
-                return;
-            }
+            //if(terms.SelectedIndex < 0)
+            //{
+            //    lblDValid.Text = "You have to agree with the Terms and conditions before submitting an idea";
+            //    Response.Redirect("CreateIdea.aspx", false);
+            //    Context.ApplicationInstance.CompleteRequest();
+            //    return;
+            //}
                 
 
             //put in session the details for idea for display
@@ -132,7 +132,7 @@ namespace salsa_pro_ui
             Response.Redirect("IdeaPage.aspx", false);
             Context.ApplicationInstance.CompleteRequest();
         }
-        
+
         protected void CL_ItemSelected(object sender, EventArgs e)
         {
             //loop through checkBoxList to select selected items

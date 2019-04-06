@@ -163,15 +163,9 @@
 
                 <itemtemplate>
                     <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
-                    <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
-                    <br />
-                    <b>Proposed by: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Author") %>'></asp:Literal>
-                    <br />
-                    <b>Submitted on: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Date") %>'></asp:Literal>
-                    <br />
-                    <b>Votes: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
-                    <br />
-                    <asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Details") %>'></asp:Literal>
+                    <b> On: <asp:Label ID="lblComAuthor" runat="server" Text='<%#Eval("Title")%>'></asp:Label></b><br />
+                        <asp:Label ID="lblComDate" runat="server" Text='<%#Eval("ComDate") %>'></asp:Label><br />
+                        <asp:Label ID="lblComment" runat="server" Text='<%#Eval("ComDetail") %>'></asp:Label><br />
                     </asp:LinkButton>
                 </itemtemplate>
             </asp:DataList>
