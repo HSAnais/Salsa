@@ -24,25 +24,28 @@ namespace salsa_pro_ui
              * listTags.DataBind();
              */
 
-            body.Attributes["placeholder"] = "Write about your idea...";
+            tbxDescription.Attributes["placeholder"] = "Write about your idea...";
 
-            to.Visible = false;
-            from.Visible = false;
 
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
+            // 
+            // 	lawdepartment.greenwich@gmail.com
+            //Session["uDepartment"].ToString()
+
+            // The code to send the email notification has been adapted from (Chris Merritt, 2014). 
             try
             {
                 /* code for the message to be sent*/
-                MailMessage message = new MailMessage(from.Text, to.Text, subject.Text, body.Text);
+                MailMessage message = new MailMessage("salsa.greenwich@gmail.com", "lawdepartment.greenwich@gmail.com", txtTitle.Text, tbxDescription.Text);
                 //  message.IsBodyHtml = true;
 
                 /*Smtp relay which handles mail sending*/
                 SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
                 client.EnableSsl = true;
-                client.Credentials = new System.Net.NetworkCredential("lawdepartment.greenwich@gmail.com", "Salsateam1");
+                client.Credentials = new System.Net.NetworkCredential("salsa.greenwich@gmail.com", "Salsateam1");
                 client.Send(message);
                 status.Text = "Mail was sent successfully!";
 

@@ -49,7 +49,7 @@
 <body>
     <form id="form1" runat="server">
         <br /> <br />
-        <asp:LinkButton ID="lblAuthor" CssClass="lbl" runat="server" OnClick="authorClick()" Text="Author name"></asp:LinkButton>
+        <asp:LinkButton ID="lblAuthor" CssClass="lbl" runat="server" Text="Author name"></asp:LinkButton>
         
         <script>
             function authorClick() {

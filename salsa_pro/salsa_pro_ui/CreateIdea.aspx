@@ -41,7 +41,7 @@
         <asp:Table ID="container" runat="server" CssClass="ideaForm" CellPadding="10">
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblTitle" runat="server" Text="Title: "></asp:Label></asp:TableCell>
-                <asp:TableCell><asp:TextBox ID="subject" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="txtTitle" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
                  
             </asp:TableRow>
           <%-- select type of author --%>
@@ -49,8 +49,8 @@
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblAuthor" runat="server" Text="Author type: "></asp:Label></asp:TableCell>
                 <asp:TableCell>
                     <asp:RadioButtonList ID="authorType" runat="server" RepeatDirection="Vertical" CellPadding="5" >
-                        <asp:ListItem Value="0" ID="lblAuthorName" runat="server" Text="Author name"></asp:ListItem>
-                        <asp:ListItem Value="1" ID="lblAnonymous" runat="server" Text="Anonymous"></asp:ListItem>
+                        <asp:ListItem  ID="lblAuthorName" runat="server" Text="Author name"></asp:ListItem>
+                        <asp:ListItem  ID="lblAnonymous" runat="server" Text="Anonymous"></asp:ListItem>
                     </asp:RadioButtonList>
                 </asp:TableCell>
             </asp:TableRow>
@@ -78,7 +78,7 @@
                 <asp:TableCell>
                     <%-- text editor for description --%>
                     <div class="description">
-                        <asp:TextBox ID="body" TextMode="MultiLine" Columns="50" Rows="5" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="tbxDescription" TextMode="MultiLine" Columns="50" Rows="5" runat="server"></asp:TextBox>
      
                     </div>
                 </asp:TableCell>
@@ -87,7 +87,7 @@
                 <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="DocUpload" runat="server" Text="Upload Document: "></asp:Label></asp:TableCell>
                 <asp:TableCell>
-            <asp:FileUpload ID="uploadFile" class="form-control-file" runat="server" />
+            <asp:FileUpload ID="uploadFile" CssClass="form-control-file" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
 
@@ -108,8 +108,7 @@
 
            
         <asp:Label ID="status" runat="server" />
-       <asp:Label ID="from" runat="server" Text="lg0724e@greenwich.ac.uk"></asp:Label>
-            <asp:Label ID="to" runat="server" Text="lawdepartment.greenwich@gmail.com"></asp:Label>
+     
 
     </form>
 </body>
