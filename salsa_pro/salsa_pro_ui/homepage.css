@@ -1,0 +1,289 @@
+﻿.menuBar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    border-style: ridge;
+    border-color:whitesmoke;
+    border-width:2px;
+}
+
+.menu {
+    top: 3%;
+    left: 2%;
+    position: absolute;
+}
+
+.links {
+    text-align: center;
+    margin-left: 1%;
+    display: none;
+    color: black;
+    border-color: lightgrey;
+    border-style:ridge;
+    border-width:2px;
+    font-size: 16px;
+    position: absolute;
+    margin-top: 10%;
+    padding: 3%;
+    background-color: white;
+    max-width: 300px;
+    min-width:200px;
+    min-height: 300px;
+    max-height: 400px;
+}
+
+.links a{
+    display: block;
+}
+
+.links a:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+
+    border-radius: 34px;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+
+        border-radius: 50%;
+    }
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.cover-photo {
+    background-image: url("Content/uni_gre.jpg");
+    background-size: 100%; /*If only one value is provided, the height will be set to auto*/
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30%;
+    position: center;
+}
+
+.uniDep {
+    font-family: 'Open Sans';
+    font-size: 26px;
+    font-weight: bold;
+    text-align: left;
+    /*width:100%;*/
+    padding-left: 25%;
+    padding-top: 0.3em;
+    right: 0;
+    left: 0;
+    position: absolute;
+    height: 1.5em;
+    background-color: #495779;
+    color: white;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    z-index: 1;
+}
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        /*visibility: hidden;*/
+        width: 6em;
+        bottom: 5em;
+        right: 0.1%;
+        /*left: 40%;*/
+        /*margin-right: 70px;*/ /* Use half of the width (120/2 = 60), to center the tooltip */
+        color: lightseagreen;
+        text-align: right;
+        font-size: 18px;
+        font-weight:bold;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+.circle-plus {
+    height: 6em;
+    width: 6em;
+    font-size: 0.7em /*Will change icon size*/;
+    right: 10%;
+    bottom: 10%;
+    position: fixed;
+    z-index: 10;
+}
+
+    .circle-plus .circle {
+        position: relative;
+        width: 4.5em;
+        height: 4.5em;
+        border-radius: 100%;
+        border: solid .8em lightseagreen;
+    }
+
+        .circle-plus .circle .horizontal {
+            position: absolute;
+            background-color: #DFDAD7;
+            width: 2.4em;
+            height: .7em;
+            top: 1.9em;
+            left: 1.05em;
+        }
+
+        .circle-plus .circle .vertical {
+            position: absolute;
+            background-color: #DFDAD7;
+            width: .7em;
+            height: 2.4em;
+            top: 1.05em;
+            left: 1.9em;
+        }
+
+        .circle-plus .circle:hover{
+            background-color:lightseagreen;
+        }
+
+/*.listTag{
+    list-style-position:outside;
+}
+
+.inputSearch{
+    width: 20%;
+    height:4%;
+    border-radius:3px;
+}
+
+.btn{
+    width:5%;
+    height: 5%;
+    font-size: 20px;
+    margin-left: 1%;
+    border-radius: 10px;
+}*/
+
+body {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    background-color: white;
+}
+
+.lbl{
+    font-weight: bold;
+    font-size: 18px;
+    max-width:870px;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align:center;
+    background-color:lightseagreen;
+    padding: 1%;
+}
+
+.datalist {
+    margin-left: 25%;
+    margin-right: 25%;
+    min-height: 400px;
+    max-width: 900px;
+    overflow: auto;
+
+    border-color:lightseagreen;
+    border-style:solid;
+
+    font-size: 14px;
+}
+
+.selectItem {
+    text-align: left;
+    text-decoration: none;
+    color: black;
+}
+
+    .selectItem:hover {
+        background-color: #087f8c;
+        color: white;
+    }
+
+footer {
+    background-color: #495779;
+    color: white;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 20px;
+}
+
+@media (max-width: 767px){
+    .menuBar{
+        width: 25px;
+        margin: 3px 0;
+        border-width: 1px;
+        height: 4px;
+    }
+
+    .menu{
+        margin-top: 0.5%;
+        margin-left: 1%;
+    }
+
+    .switch{
+        width: 30px;
+        height: 17px;
+    }
+
+    .datalist{
+        max-width: 112px;
+    }
+
+    .lbl{
+        max-width: 110.5px;
+    }
+}
