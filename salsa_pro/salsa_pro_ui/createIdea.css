@@ -126,9 +126,11 @@ input:checked + .slider:before {
     width: 50%;
 }
 
-#lblTValid, #lblAValid, #lblDValid{
+.valid{
     font-weight:normal;
     color: darkred;
+    width: 100%;
+    height: 3em;
 }
 
 .lbl {
@@ -179,7 +181,7 @@ h3{
 }
 
 .ideaForm{
-    max-width: 200px;
+    max-width: 500px;
     min-height:400px;
     margin-left: 35%;
     margin-right: 35%;
@@ -253,7 +255,4 @@ footer {
         max-width: 100px;
         margin-left: 15%;
     }
-
-    .lbl {
     }
-}

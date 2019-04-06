@@ -43,14 +43,14 @@
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label></asp:TableCell>
                 <asp:TableCell><asp:TextBox ID="txtUsername" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
-                <asp:TableCell><asp:Label ID="lblUValid" Text="" runat="server" CssClass="c1"></asp:Label></asp:TableCell>
+                <asp:TableCell><asp:Label ID="lblUValid" Text="" runat="server" CssClass="c1" AssociatedControlID="txtUsername"></asp:Label></asp:TableCell>
             </asp:TableRow>
 
             <%--Password--%>
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label></asp:TableCell>
                 <asp:TableCell><asp:TextBox ID="txtPassword" CssClass="txt" runat="server" TextMode="Password"></asp:TextBox></asp:TableCell>
-                <asp:TableCell><asp:Label ID="lblPValid" Text="" runat="server" CssClass="c1"></asp:Label></asp:TableCell>
+                <asp:TableCell><asp:Label ID="lblPValid" Text="" runat="server" CssClass="c1" AssociatedControlID="txtPassword"></asp:Label></asp:TableCell>
             </asp:TableRow>
         </asp:Table>
     <br />

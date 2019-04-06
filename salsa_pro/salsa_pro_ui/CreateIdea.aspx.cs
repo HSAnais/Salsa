@@ -37,12 +37,12 @@ namespace salsa_pro_ui
             lblAuthorName.Text = Convert.ToString(Session["uName"]);
 
             //validation
-            if (!IsPostBack)
-            {
-                lblAValid.Text = "";
-                lblDValid.Text = "";
-                lblTValid.Text = "";
-            }
+            //if (!IsPostBack)
+            //{
+            //    lblAValid.Text = "";
+            //    lblDValid.Text = "";
+            //    lblTValid.Text = "";
+            //}
 
             //get tags from database
             /*List<> Tags = await new .GetTags(); 
@@ -58,59 +58,58 @@ namespace salsa_pro_ui
 
         protected void BtnDoc_Click(object sender, EventArgs e)
         {
-            // Configure open file dialog box
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-            dlg.FileName = "Document"; // Default file name
-            dlg.DefaultExt = ".txt"; // Default file extension
-            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+            //// Configure open file dialog box
+            //Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            //dlg.FileName = "Document"; // Default file name
+            //dlg.DefaultExt = ".txt"; // Default file extension
+            //dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
 
-            // Show open file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
+            //// Show open file dialog box
+            //Nullable<bool> result = dlg.ShowDialog();
 
-            // Process open file dialog box results
-            if (result == true)
-            {
-                // Open document
-                string filename = dlg.FileName;
+            //// Process open file dialog box results
+            //if (result == true)
+            //{
+            //    // Open document
+            //    string filename = dlg.FileName;
 
-                tbxDocument.Attributes["placeholder"] = dlg.FileName;
-            }
+            //    tbxDocument.Attributes["placeholder"] = dlg.FileName;
+            //}
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
+            bool isReady = true;
+
             //input validation
             if (txtTitle.Text == "")
             {
                 lblTValid.Text = "Please fill in the title of your idea";
-                Response.Redirect("CreateIdea.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                isReady = false;
                 return;
             }
 
             if (tbxDescription.Text == "")
             {
                 lblDValid.Text = "Please fill in details of your idea";
-                Response.Redirect("CreateIdea.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                isReady = false;
                 return;
             }
 
             if (authorType.SelectedIndex < 0)
             {
                 lblAValid.Text = "Please choose how will your username be displayed";
-                Response.Redirect("CreateIdea.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                isReady = false;
                 return;
             }
 
-            if(terms.SelectedIndex < 0)
-            {
-                lblDValid.Text = "You have to agree with the Terms and conditions before submitting an idea";
-                Response.Redirect("CreateIdea.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
-                return;
-            }
+            //if(terms.SelectedIndex < 0)
+            //{
+            //    lblDValid.Text = "You have to agree with the Terms and conditions before submitting an idea";
+            //    Response.Redirect("CreateIdea.aspx", false);
+            //    Context.ApplicationInstance.CompleteRequest();
+            //    return;
+            //}
                 
 
             //put in session the details for idea for display
@@ -132,7 +131,7 @@ namespace salsa_pro_ui
             Response.Redirect("IdeaPage.aspx", false);
             Context.ApplicationInstance.CompleteRequest();
         }
-        
+
         protected void CL_ItemSelected(object sender, EventArgs e)
         {
             //loop through checkBoxList to select selected items

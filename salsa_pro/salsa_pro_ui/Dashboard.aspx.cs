@@ -149,7 +149,7 @@ namespace salsa_pro_ui
                     //put in session all updates
 
                     //links
-                    if (Session["uRole"] == "Quality Assurance Coordinator")
+                    if (Session["uRole"].ToString() == "Quality Assurance Coordinator")
                     {
                         //redirect to Idea page 
                         Response.Redirect("IdeaPage.aspx", false);

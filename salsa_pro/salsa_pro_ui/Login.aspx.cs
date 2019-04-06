@@ -11,11 +11,11 @@ namespace salsa_pro_ui
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                lblUValid.Text = "";
-                lblPValid.Text = "";
-            }
+            //if (!IsPostBack)
+            //{
+            //    lblUValid.Text = "";
+            //    lblPValid.Text = "";
+            //}
 
             if(Session["uName"]!=null)
             {
@@ -40,15 +40,19 @@ namespace salsa_pro_ui
 
         protected void BtnLogin_Click(object sender, EventArgs e)
         {
+            bool isReady = true;
+
             //input validation 
-            if (txtUsername.Text == null || txtPassword.Text == null)
+            if (txtUsername.Text == "" || txtPassword.Text == "")
             {
                 lblUValid.Text = "Please fill all fields";
+                isReady = false;
                 return; }
 
             if(txtPassword.Text == "wrong")
             {
                 lblPValid.Text = "Wrong password";
+                isReady = false;
                 return;
             }
             //input check with database
@@ -91,8 +95,11 @@ namespace salsa_pro_ui
                     break;
             }
             //redirect to user profile
-            Response.Redirect("UserProfile.aspx", false);
-            Context.ApplicationInstance.CompleteRequest();
+            if (isReady == true)
+            {
+                Response.Redirect("UserProfile.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
         }
     }
 }
