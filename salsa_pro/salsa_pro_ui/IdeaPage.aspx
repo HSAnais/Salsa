@@ -52,7 +52,7 @@
 <body>
     <form id="form1" runat="server">
         <br /> <br />
-        <span onclick="authorClick()">
+ <span onclick="authorClick()">
             <div id="options">
                 <asp:RadioButtonList ID="rbAuthor" runat="server" TextAlign="Left" >
                     <asp:ListItem>hide/unhide</asp:ListItem>
@@ -60,8 +60,8 @@
                 </asp:RadioButtonList>
             </div>
         <asp:Label ID="lblAuthor" CssClass="lbl" runat="server" Text="Author name"></asp:Label> <%--OnClick="authorClick()"--%>
-        
-        <script>
+       
+   <script>
             function authorClick() {
                 var links = document.getElementById("options");
                 if (links.style.display === "block")

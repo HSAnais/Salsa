@@ -47,14 +47,13 @@
                 <asp:TableCell><asp:TextBox ID="txtTitle" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
                 <asp:TableCell><asp:Label ID="lblTValid" Text="" runat="server" CssClass="valid" AssociatedControlID="txtTitle"></asp:Label></asp:TableCell>
             </asp:TableRow>
-
-            <%-- select type of author --%>
+          <%-- select type of author --%>
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblAuthor" runat="server" Text="Author type: "></asp:Label></asp:TableCell>
                 <asp:TableCell>
                     <asp:RadioButtonList ID="authorType" runat="server" RepeatDirection="Vertical" CellPadding="5" >
-                        <asp:ListItem ID="lblAuthorName" runat="server" Text="Author name"></asp:ListItem>
-                        <asp:ListItem ID="lblAnonymous" runat="server" Text="Anonymous"></asp:ListItem>
+                        <asp:ListItem  ID="lblAuthorName" runat="server" Text="Author name"></asp:ListItem>
+                        <asp:ListItem  ID="lblAnonymous" runat="server" Text="Anonymous"></asp:ListItem>
                     </asp:RadioButtonList>
                 </asp:TableCell>
                  <asp:TableCell><asp:Label ID="lblAValid" Text="" runat="server" CssClass="valid" AssociatedControlID="authorType"></asp:Label></asp:TableCell>
@@ -78,12 +77,14 @@
                 </asp:TableCell>
             </asp:TableRow>
 
+
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="lblDetails" runat="server" Text="Description: "></asp:Label></asp:TableCell>
                 <asp:TableCell>
                     <%-- text editor for description --%>
                     <div class="description">
                         <asp:TextBox ID="tbxDescription" TextMode="MultiLine" Columns="50" Rows="5" runat="server"></asp:TextBox>
+     
                     </div>
                 </asp:TableCell>
                  <asp:TableCell><asp:Label ID="lblDValid" Text="" runat="server" CssClass="valid" AssociatedControlID="tbxDescription"></asp:Label></asp:TableCell>
@@ -100,11 +101,30 @@
                     <p>By submitting your idea you agree with our <a href="About.aspx">Terms & conditions</a></p>
                 </asp:TableCell>
             </asp:TableRow>
+
+                <asp:TableRow>
+                <asp:TableCell CssClass="c1"><asp:Label ID="DocUpload" runat="server" Text="Upload Document: "></asp:Label></asp:TableCell>
+                <asp:TableCell>
+            <asp:FileUpload ID="uploadFile" CssClass="form-control-file" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+
+            <asp:TableRow>
+                <asp:TableCell CssClass="c1"></asp:TableCell>
+                <asp:TableCell>
+                      <asp:CheckBox ID="CheckBox1" runat="server" />
+                    <asp:Label ID="Label1" runat="server" Text="Click the box to agree to Terms and Conditions: "></asp:Label>
+                   
+                </asp:TableCell>
+            </asp:TableRow>
+
         </asp:Table>
         <br /><br />
 
         <%-- submit idea --%>
         <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn" OnClick="BtnSubmit_Click"></asp:Button>
+
+
     </form>
 </body>
 
