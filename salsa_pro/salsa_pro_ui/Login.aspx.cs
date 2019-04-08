@@ -45,7 +45,7 @@ namespace salsa_pro_ui
             //input validation 
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
-                lblUValid.Text = "Please fill all fields";
+                lblUValid.Text = "Please fill all fields.";
                 isReady = false;
                 return; }
 
