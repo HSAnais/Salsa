@@ -97,6 +97,8 @@
 
             <asp:TableRow>
                 <asp:TableCell>
+                </asp:TableCell>
+                <asp:TableCell>
                     <p>By submitting your idea you agree with our <a href="About.aspx">Terms & conditions</a></p>
                 </asp:TableCell>
             </asp:TableRow>
