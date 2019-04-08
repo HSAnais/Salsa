@@ -1,7 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IdeaPage.aspx.cs" Inherits="salsa_pro_ui.IdeaPage" %>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" href="ideaPage.css">
 <script src="homepage.js"></script>
+
+<%-- photo of university; author: Anais Hristea (not published online) --%>
+<div class="cover-photo" title="Photo of university campus"></div>
+<%-- department name --%>
+<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
+<br /> <br /> <br />
 
 <%-- menu--%>
 <div class="menu" onclick="menuClick()">
@@ -13,11 +20,13 @@
     <br />
     <a href="Homepage.aspx">Home</a>
     <br />
-    <a href="UserProfile.aspx">Profile</a>
+    <a href="Browse.aspx">Browse ideas</a>
+    <br />
+    <a href="UserProfile.aspx" id="aProfile" runat="server"><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
     <br />
     <a href="About.aspx">About</a>
     <br />
-    <a href="Login.aspx">Login</a>
+    <a href="Login.aspx"><asp:Label id="mLogin" Text="Login" runat="server"></asp:Label></a>
     <br /><br />
     <%-- toggle between colours--%>
     <asp:Label runat="server">Light/Dark background</asp:Label>
@@ -27,12 +36,6 @@
       <span class="slider" onclick="bkgSwitch()"></span>
     </label>
 </div></div>
-
-<%-- photo of university; author: Anais Hristea (not published online) --%>
-<div class="cover-photo"></div>
-<%-- department name --%>
-<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
-<br /> <br /> <br />
 
 <div class="circle-plus">
     <div class="tooltip">
@@ -49,23 +52,25 @@
 <body>
     <form id="form1" runat="server">
         <br /> <br />
-        <asp:LinkButton ID="lblAuthor" CssClass="lbl" runat="server" Text="Author name"></asp:LinkButton>
-        
-        <script>
+ <span onclick="authorClick()">
+            <div id="options">
+                <asp:RadioButtonList ID="rbAuthor" runat="server" TextAlign="Left" >
+                    <asp:ListItem>hide/unhide</asp:ListItem>
+                    <asp:ListItem>block/unblock</asp:ListItem>
+                </asp:RadioButtonList>
+            </div>
+        <asp:Label ID="lblAuthor" CssClass="lbl" runat="server" Text="Author name"></asp:Label> <%--OnClick="authorClick()"--%>
+       
+   <script>
             function authorClick() {
                 var links = document.getElementById("options");
                 if (links.style.display === "block")
                     links.style.display = "none";
                 else
-                    links.style.display = "block";
+                    links.style.display = "inline-block";
             }
         </script>
-        <div id="options">
-            <asp:RadioButtonList ID="rbAuthor" runat="server">
-                <asp:ListItem>hide/unhide</asp:ListItem>
-                <asp:ListItem>block/unblock</asp:ListItem>
-            </asp:RadioButtonList>
-        </div>
+        </span>
 
         <asp:Label ID="lblDate" CssClass="lbl" runat="server" Text="Date of submission"></asp:Label>
 
@@ -88,10 +93,10 @@
         <div class="comment">
             <asp:TextBox ID="tbxComment" TextMode="MultiLine" Columns="50" Rows="5" runat="server"></asp:TextBox>
         </div>
-        <br /><br />
         <%-- submit comment --%>
             <asp:Button ID="btnComment" runat="server" Text="Add comment" CssClass="btn" OnClick="BtnCom_Click"></asp:Button>
 
+        <br /><br />
         <%-- Comments --%>
          <div class="datalist">
             <asp:DataList ID="dlComments"  runat="server"
@@ -102,7 +107,7 @@
 
                 <itemtemplate>
                     <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Author") %>'></asp:Literal></b>
-                    <b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Date") %>'></asp:Literal></b>
+                    <b><asp:Label ID="Literal2" CssClass="lblCD" runat="server" Text='<%#Eval("Date") %>'></asp:Label></b>
                     <br />
                     <asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Details") %>'></asp:Literal>
                     <br /><br /><br />               

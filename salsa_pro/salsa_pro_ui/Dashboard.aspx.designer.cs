@@ -13,13 +13,13 @@ namespace salsa_pro_ui {
     public partial class Dashboard {
         
         /// <summary>
-        /// lblDepartment control.
+        /// mLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDepartment;
+        protected global::System.Web.UI.WebControls.Label mLogin;
         
         /// <summary>
         /// form1 control.
@@ -65,5 +65,9 @@ namespace salsa_pro_ui {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList dlRole;
+        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.WebControls.Label lblTitle;
+        protected global::System.Web.UI.WebControls.Button btnEditSave;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
     }
 }

@@ -1,7 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="salsa_pro_ui.Homepage" %>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" href="homepage.css">
 <script src="homepage.js"></script>
+
+<%-- photo of university; author: Anais Hristea (not published online) --%>
+<div class="cover-photo" title="Photo of university campus"></div>
+<%-- department name --%>
+<asp:Label ID="lblDepartment" runat="server" text="Department of Computing & Information Systems" class="uniDep"></asp:Label>
 
 <%-- menu--%>
 <div class="menu" onclick="menuClick()">
@@ -13,11 +19,13 @@
     <br />
     <a href="Homepage.aspx">Home</a>
     <br />
-    <a href="UserProfile.aspx">Profile</a>
+    <a href="Browse.aspx">Browse ideas</a>
+    <br />
+    <a href="UserProfile.aspx" id="aProfile" runat="server"><asp:Label id="mProfile" Text="Profile" runat="server"></asp:Label></a>
     <br />
     <a href="About.aspx">About</a>
     <br />
-    <a href="Login.aspx">Login</a>
+    <a href="Login.aspx"><asp:Label id="mLogin" Text="Login" runat="server"></asp:Label></a>
     <br /><br />
     <%-- toggle between colours--%>
     <asp:Label runat="server">Light/Dark background</asp:Label>
@@ -27,11 +35,6 @@
       <span class="slider" onclick="bkgSwitch()"></span>
     </label>
 </div></div>
-
-<%-- photo of university; author: Anais Hristea (not published online) --%>
-<div class="cover-photo"></div>
-<%-- department name --%>
-<asp:Label ID="lblDepartment" runat="server" text="Department" class="uniDep"></asp:Label>
 
 <div class="circle-plus">
     <div class="tooltip">
@@ -75,7 +78,7 @@
 
                 <itemtemplate>
                     <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
-                    <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
+                    <b><h3><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></h3></b>
                     <br />
                     <b>Proposed by: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Author") %>'></asp:Literal>
                     <br />
@@ -86,6 +89,7 @@
                     <asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Details") %>'></asp:Literal>
                     </asp:LinkButton>
                 </itemtemplate>
+                
             </asp:DataList>
         </div>
 
@@ -159,15 +163,9 @@
 
                 <itemtemplate>
                     <asp:LinkButton id="SelectButton" CommandName="Select" runat="server" CssClass="selectItem" >
-                    <b><asp:Literal ID="Literal1" runat="server" Text='<%#Eval("Title")%>'></asp:Literal></b>
-                    <br />
-                    <b>Proposed by: </b><asp:Literal ID="Literal2" runat="server" Text='<%#Eval("Author") %>'></asp:Literal>
-                    <br />
-                    <b>Submitted on: </b><asp:Literal ID="Literal3" runat="server" Text='<%#Eval("Date") %>'></asp:Literal>
-                    <br />
-                    <b>Votes: </b><asp:Literal ID="Literal4" runat="server" Text='<%#Eval("Rating") %>'></asp:Literal>
-                    <br />
-                    <asp:Literal ID="Literal5" runat="server" Text='<%#Eval("Details") %>'></asp:Literal>
+                    <b> On: <asp:Label ID="lblComAuthor" runat="server" Text='<%#Eval("Title")%>'></asp:Label></b><br />
+                        <asp:Label ID="lblComDate" runat="server" Text='<%#Eval("ComDate") %>'></asp:Label><br />
+                        <asp:Label ID="lblComment" runat="server" Text='<%#Eval("ComDetail") %>'></asp:Label><br />
                     </asp:LinkButton>
                 </itemtemplate>
             </asp:DataList>
