@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Net.Mail; /*  library to send email       */
+using System.Net.Mail; /*  library to send emails */
 using System.Text;
 using System.IO;
 
@@ -31,31 +31,24 @@ namespace salsa_pro_ui
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            // 
-            // 	lawdepartment.greenwich@gmail.com
-            //Session["uDepartment"].ToString()
+            
+                // The code to send an email notification to a QA Coordinator has been adapted from (Chris Merritt, 2014). 
+              
+                // MailMessage object called "message" takes parameters which are sender email addresses, receiver email address, the title and description of the email
+                MailMessage message = new MailMessage("salsa.greenwich@gmail.com", "computing.ormount@gmail.com", txtTitle.Text, tbxDescription.Text);
 
-            // The code to send the email notification has been adapted from (Chris Merritt, 2014). 
-            try
-            {
-                /* code for the message to be sent*/
-                MailMessage message = new MailMessage("salsa.greenwich@gmail.com", "lawdepartment.greenwich@gmail.com", txtTitle.Text, tbxDescription.Text);
-                //  message.IsBodyHtml = true;
-
-                /*Smtp relay which handles mail sending*/
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                client.EnableSsl = true;
+                // We were unable to get the functionality to send emails to separate QA Coordinators
+             
+                // Smtp handles the delivery of emails to clients
+                // SmtpClient object showing server information
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587); // host email and port number used 
+                client.EnableSsl = true; // the mail server requires users to set the EnableSsl property to true to access the server (Microsoft, n.d.)
                 client.Credentials = new System.Net.NetworkCredential("salsa.greenwich@gmail.com", "Salsateam1");
-                client.Send(message);
-                status.Text = "Mail was sent successfully!";
+                /* NetworkCredential ojbect is set to the SmtpClient with the username and password
+                 of the client which needs authentication (Behera, 2013)*/
+                client.Send(message); // the send method is called to send the email
+          
 
-            }
-            catch (Exception ex)
-            {
-                status.Text = ex.StackTrace; /* sees what the exception is*/
-            }
-
-            status.Text = "Mail was sent successfully!";
             //input validation
 
             //put in session the details for idea for display

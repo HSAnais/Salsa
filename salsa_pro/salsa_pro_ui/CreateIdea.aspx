@@ -106,9 +106,6 @@
         <%-- submit idea --%>
         <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn" OnClick="BtnSubmit_Click"></asp:Button>
 
-           
-        <asp:Label ID="status" runat="server" />
-     
 
     </form>
 </body>
