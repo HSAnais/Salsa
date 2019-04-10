@@ -193,23 +193,14 @@ namespace salsa_pro_ui {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// tbxDocument control.
+        /// FileUpload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxDocument;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
-        /// <summary>
-        /// btnDocument control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDocument;
-      
         /// <summary>
         /// btnSubmit control.
         /// </summary>

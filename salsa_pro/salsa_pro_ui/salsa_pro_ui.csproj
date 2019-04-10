@@ -82,6 +82,10 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="about.css" />
+    <Content Include="App_Data\Salsa6.mdf" />
+    <Content Include="App_Data\Salsa6_log.ldf">
+      <DependentUpon>Salsa6.mdf</DependentUpon>
+    </Content>
     <Content Include="browse.css" />
     <Content Include="Content\uni_gre.jpg" />
     <Content Include="CreateIdea.aspx" />
@@ -148,6 +152,14 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\DbConnet.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Idea.cs" />
+    <Compile Include="Models\IdeaTag.cs" />
+    <Compile Include="Models\IdeaVote.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Browse.aspx.cs">
       <DependentUpon>Browse.aspx</DependentUpon>
@@ -174,9 +186,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

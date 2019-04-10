@@ -168,14 +168,14 @@ namespace salsa_pro_ui
 
 
             // file upload save in App_Data
-            if (uploadFile.HasFile)
+            if (FileUpload1.HasFile)
             {
-                var filename = Path.GetFileName(uploadFile.FileName);
+                var filename = Path.GetFileName(FileUpload1.FileName);
                 var path = "/App_Data/" + filename;
 
                 var trueFilepath = Path.Combine(Server.MapPath("~/App_Data/"), filename);
 
-                uploadFile.SaveAs(trueFilepath);
+                FileUpload1.SaveAs(trueFilepath);
                 /*
                 NewFile file = new NewFile()
                 {

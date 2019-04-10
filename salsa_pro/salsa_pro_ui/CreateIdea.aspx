@@ -90,10 +90,11 @@
                  <asp:TableCell><asp:Label ID="lblDValid" Text="" runat="server" CssClass="valid" AssociatedControlID="tbxDescription"></asp:Label></asp:TableCell>
             </asp:TableRow>
 
-            <asp:TableRow>
-                <asp:TableCell CssClass="c1"><asp:Label ID="Label1" runat="server" Text="Upload document: "></asp:Label></asp:TableCell>
-                <asp:TableCell><asp:TextBox ID="tbxDocument" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
-                <asp:TableCell><asp:Button ID="btnDocument" runat="server" Text="Upload" CssClass="btnDoc" OnClick="BtnDoc_Click"></asp:Button></asp:TableCell>
+               <asp:TableRow>
+                <asp:TableCell CssClass="c1"><asp:Label ID="Label1" runat="server" Text="Upload Document: "></asp:Label></asp:TableCell>
+                <asp:TableCell>
+            <asp:FileUpload ID="FileUpload1" CssClass="form-control-file" runat="server" />
+                </asp:TableCell>
             </asp:TableRow>
 
             <asp:TableRow>
@@ -102,21 +103,8 @@
                 </asp:TableCell>
             </asp:TableRow>
 
-                <asp:TableRow>
-                <asp:TableCell CssClass="c1"><asp:Label ID="DocUpload" runat="server" Text="Upload Document: "></asp:Label></asp:TableCell>
-                <asp:TableCell>
-            <asp:FileUpload ID="uploadFile" CssClass="form-control-file" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-
-            <asp:TableRow>
-                <asp:TableCell CssClass="c1"></asp:TableCell>
-                <asp:TableCell>
-                      <asp:CheckBox ID="CheckBox1" runat="server" />
-                    <asp:Label ID="Label1" runat="server" Text="Click the box to agree to Terms and Conditions: "></asp:Label>
-                   
-                </asp:TableCell>
-            </asp:TableRow>
+          
+            
 
         </asp:Table>
         <br /><br />
