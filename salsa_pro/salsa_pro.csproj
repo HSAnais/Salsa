@@ -73,7 +73,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include=".Designer.cs" />
     <Compile Include="Comment.cs">
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>
@@ -195,13 +194,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelEF.edmx</DependentUpon>
       <LastGenOutput>ModelEF.cs</LastGenOutput>
-    </Content>
-    <Content Include="Salsa6.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Salsa6_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Salsa6.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
