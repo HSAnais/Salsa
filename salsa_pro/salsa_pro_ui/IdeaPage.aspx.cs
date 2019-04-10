@@ -40,6 +40,7 @@ namespace salsa_pro_ui
 
             tbxComment.Attributes["placeholder"] = "Write a comment...";
 
+            //hardcoded data for the demo
             if (Session["iTitle"] == null)
             {
                 lblAuthor.Text = "Josephine Mouse";

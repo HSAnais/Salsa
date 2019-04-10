@@ -55,6 +55,7 @@
         </asp:Table>
     <br />
 
+    <%-- login button --%>
     <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn" OnClick="BtnLogin_Click"></asp:Button>
     </form>
 </body>

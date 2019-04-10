@@ -94,7 +94,7 @@ namespace salsa_pro_ui
             dlLastComs.DataSource = table3;
             dlLastComs.DataBind();
 
-            //get ideas for datalists - 5 IDEAS HAVE TO FIT THE WIDTH
+            //get ideas for datalists
             /*List<> iTrending = await new .GetIdeasByVotes();
              *List<> iMostViewed = await new .GetIdeasByViews();
              *List<> iLastIdeas =  await new .GetLastIdeas();

@@ -34,6 +34,7 @@ namespace salsa_pro_ui
                 return;
             }
 
+            //display the user's name
             lblAuthorName.Text = Convert.ToString(Session["uName"]);
 
             //validation
