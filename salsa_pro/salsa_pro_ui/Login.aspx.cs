@@ -45,7 +45,7 @@ namespace salsa_pro_ui
             //input validation 
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
-                lblUValid.Text = "Please fill all fields";
+                lblUValid.Text = "Please fill all fields.";
                 isReady = false;
                 return; }
 
@@ -69,6 +69,7 @@ namespace salsa_pro_ui
             Session["uDepartment"] = "Department of Life Sciences";
             Session["uRole"] = "Staff";
 
+            //hardcoded data for the demo to show role-specific permissions
             switch (txtUsername.Text) {
                 case "qam":
                     Session["uName"] = "Sarah Lovelace";
@@ -94,6 +95,7 @@ namespace salsa_pro_ui
                 default:
                     break;
             }
+
             //redirect to user profile
             if (isReady == true)
             {

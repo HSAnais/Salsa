@@ -31,6 +31,7 @@
     </label>
 </div></div>
 
+<%-- create idea button --%>
 <div class="circle-plus">
     <div class="tooltip">
         <label class="tooltiptext">Create a   new idea</label>

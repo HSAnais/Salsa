@@ -32,6 +32,7 @@
     </div>
 </div>
 
+<%-- create idea button --%>
 <div class="circle-plus">
     <div class="tooltip">
         <label class="tooltiptext">Create a   new idea</label>
@@ -49,6 +50,7 @@
     <asp:Label ID="lblWelcome" CssClass="welcome" runat="server" Text="Welcome, [name]!"></asp:Label><br />
     <asp:Label ID="lblLastLogin" Visible="false" CssClass="login" runat="server" Text="Your last login was: xxxxxxxx"></asp:Label>
 
+    <%-- user account information --%>
     <div class="container">
         <div class="info">
             <b><asp:Label runat="server" Text="Email:"></asp:Label></b><br />
@@ -57,6 +59,7 @@
             <asp:Label ID="lblDep" runat="server" Text="Computing and Maths"></asp:Label><br />
         </div>
 
+        <%-- ideas by user --%>
         <div class="datalist">
             <asp:Label CssClass="lbli" runat="server" Text="Your ideas" ></asp:Label>
             <asp:DataList ID="dlIdeas"  runat="server"
@@ -77,6 +80,7 @@
             </asp:DataList>
         </div>
 
+        <%-- comments by user --%>
         <div class="datalist">
             <asp:Label CssClass="lbl" runat="server" Text="Your comments"></asp:Label>
             <asp:DataList ID="dlComments"  runat="server"

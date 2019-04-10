@@ -38,6 +38,7 @@
     </label>
 </div></div>
 
+<%-- create idea button --%>
 <div class="circle-plus">
     <div class="tooltip">
         <label class="tooltiptext">Create a   new idea</label>
@@ -52,6 +53,7 @@
 
 <body>
 <form id="form1" runat="server"> 
+    <%-- display tags --%>
     <asp:DropDownList ID="listTags" runat="server" CssClass="dropdown" AutoPostBack="True" OnSelectedIndexChanged="SelectedTag">
         <asp:ListItem Text=""></asp:ListItem>
         <asp:ListItem Text="maintenance"></asp:ListItem>
@@ -64,6 +66,7 @@
     <asp:Button ID="btnSort" runat="server" CssClass="btn" Text="Sort" OnClick="BtnSort_Click"></asp:Button>
     <br /><br />
     
+    <%-- sorting results --%>
     <div class="datalist">
         <br />
         <asp:Label ID="lblTag" CssClass="lbl" runat="server" Text="Latest ideas: "></asp:Label>

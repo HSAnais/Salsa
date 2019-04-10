@@ -37,6 +37,7 @@
     </label>
 </div></div>
 
+<%-- create idea button --%>
 <div class="circle-plus">
     <div class="tooltip">
         <label class="tooltiptext">Create a   new idea</label>
@@ -49,6 +50,7 @@
     </div>
 </div> 
 
+<%-- role-specific functionality over user account --%>
 <body>
     <form id="form1" runat="server">
         <br /> <br />

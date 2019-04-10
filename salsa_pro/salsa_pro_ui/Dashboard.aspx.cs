@@ -10,10 +10,15 @@ namespace salsa_pro_ui
 {
     public partial class Dashboard : System.Web.UI.Page
     {
-        //protected global::System.Web.UI.WebControls.Label lblDescription;
-        //protected global::System.Web.UI.WebControls.Label lblTitle;
-        //protected global::System.Web.UI.WebControls.Button btnEditSave;
-        //protected global::System.Web.UI.WebControls.Button btnDelete;
+        /*
+         * Dashboard.aspx.designer.cs doesn't update the following lines. 
+           If encountering errors concerning their existence, simply copy these lines at the end of Dashboard.aspx.designer.cs file.
+
+            protected global::System.Web.UI.WebControls.Label lblDescription;
+            protected global::System.Web.UI.WebControls.Label lblTitle;
+            protected global::System.Web.UI.WebControls.Button btnEditSave;
+            protected global::System.Web.UI.WebControls.Button btnDelete;
+        */
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -136,15 +141,7 @@ namespace salsa_pro_ui
 
         protected void DL_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            //check if logged in
-            if (Session["uName"] == null)
-            {
-                Response.Redirect("Login.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
-            }
-            else
-            {
-                try
+            try
                 {
                     //put in session all updates
 
@@ -162,11 +159,11 @@ namespace salsa_pro_ui
                         Context.ApplicationInstance.CompleteRequest();
                     }
                 }
-                catch (System.Threading.ThreadAbortException)
+            catch (System.Threading.ThreadAbortException)
                 {
                     //Do nothing.  The exception will get rethrown by the framework when this block terminates.
                 }
-            }
+            
         }//DL_ItemCommand
     }
 }

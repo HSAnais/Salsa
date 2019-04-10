@@ -34,8 +34,9 @@ namespace salsa_pro_ui
                 Response.Redirect("Login.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
+
             //hardcoded data for demo
-            //trending
+            //show all ideas if there is no sorting filter
             DataTable table = new DataTable();
             table.Columns.Add("Title");
             table.Columns.Add("Author");
@@ -76,6 +77,7 @@ namespace salsa_pro_ui
             //lblTag.Text = "#" + Session["tag"].ToString();
             lblTag.Text = "#" + listTags.SelectedItem.Text;
 
+            //hardcoded data for demo
             DataTable table1 = new DataTable();
             table1.Columns.Add("Title");
             table1.Columns.Add("Author");

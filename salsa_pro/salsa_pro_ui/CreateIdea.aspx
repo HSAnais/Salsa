@@ -90,6 +90,7 @@
                  <asp:TableCell><asp:Label ID="lblDValid" Text="" runat="server" CssClass="valid" AssociatedControlID="tbxDescription"></asp:Label></asp:TableCell>
             </asp:TableRow>
 
+            <%-- upload document --%>
             <asp:TableRow>
                 <asp:TableCell CssClass="c1"><asp:Label ID="Label1" runat="server" Text="Upload document: "></asp:Label></asp:TableCell>
                 <asp:TableCell><asp:TextBox ID="tbxDocument" CssClass="txt" runat="server"></asp:TextBox></asp:TableCell>
@@ -97,6 +98,8 @@
             </asp:TableRow>
 
             <asp:TableRow>
+                <asp:TableCell>
+                </asp:TableCell>
                 <asp:TableCell>
                     <p>By submitting your idea you agree with our <a href="About.aspx">Terms & conditions</a></p>
                 </asp:TableCell>
