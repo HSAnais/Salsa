@@ -85,21 +85,21 @@ namespace salsa_pro_ui
             //input validation
             if (txtTitle.Text == "")
             {
-                lblTValid.Text = "Please fill in the title of your idea";
+                lblTValid.Text = "Please fill in the title of your idea.";
                 isReady = false;
                 return;
             }
 
             if (tbxDescription.Text == "")
             {
-                lblDValid.Text = "Please fill in details of your idea";
+                lblDValid.Text = "Please fill in details of your idea.";
                 isReady = false;
                 return;
             }
 
             if (authorType.SelectedIndex < 0)
             {
-                lblAValid.Text = "Please choose how will your username be displayed";
+                lblAValid.Text = "Please how your username will be displayed.";
                 isReady = false;
                 return;
             }
